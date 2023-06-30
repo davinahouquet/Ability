@@ -11,12 +11,12 @@
 </head>
 
 <header>
+    
     <nav>
         <div class="ability-logo">
-            <i class="fa-solid fa-hands"></i>
-            <p class="ability">Ability</p>
+            <img class="logo" src="http://localhost/Ability/public/img/logo.png">
         </div>
-        <ul>
+        <ul class="navigation">
             <p><a href="index.php?action=#" class="navigation-item">Catégories</a></p>
 
             <!-- CONNEXION - COMPTE - UTILISATEURS - ADMIN -->
@@ -24,7 +24,7 @@
                 // if NOT connected...
             ?>
             <p ><a href="index.php?action=#" class="navigation-item">Connexion</a></p>
-
+            <div class="user-color"></div>
             <?php
                 //else if connected...
             ?>

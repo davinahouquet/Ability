@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&display=swap');
-/*----- Commun à toutes les vues */
+/*---------- Commun à toutes les vues ----------*/
 
 *{
     font-family: "M PLUS Rounded 1c";
+    margin: 0;
 }
 
 html {
@@ -20,7 +21,7 @@ body{
 
 /*----- Palette de couleurs */
 :root {
-    --dark-font-color: #1E1E1E;
+    --dark-font-color: #212121;
     --submit-button: #3DC5E2;
     --font-submit-button: #FFFFFF;
     --superAdmin-button: #DB5050;
@@ -29,6 +30,15 @@ body{
     --hover: #636363;
 }
 
+/*---------- Barre de navigation ----------*/
+
+nav{
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(180deg, rgba(110,129,127,1), rgb(251,244,233) 42%);
+}
 
 /* Contient le logo et le nom */
 .ability-logo{
@@ -37,15 +47,29 @@ body{
     align-items: center;
 }
 
+.logo{
+    max-width: 210px;
+}
 /* Contient tous les éléments de navigation */
-ul{
+.navigation{
+    font-size: 20px;
     display: flex;
     flex-direction: row;
+    justify-content: right;
+    padding: 10px;
+    align-items: center;
 }
 
 .navigation-item{
     color: var(--dark-font-color);
     text-decoration: none;
-    text-align: right;
+    padding-right: 30px;
 }
-/*----- Barre de navigation */
+
+/* Rond de couleur */
+.user-color{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #1E1E1E;
+}
