@@ -48,7 +48,24 @@
         </ul>
     </nav>
 </header>
+
 <body>
     
+    <main>
+        <!-- <?= $contenu ?> -->
+    </main>
+
 </body>
+
+<footer>
+
+    <div class="socials">
+        <a href="#"><i class="fa-brands fa-instagram" id="social-item"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook" id="social-item"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin" id="social-item"></i></a>
+    </div>
+
+</footer>
+
+<script src="http://localhost/Ability/public/js/script.js"></script>
 </html>
