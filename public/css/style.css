@@ -1,0 +1,27 @@
+html {
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: rgb(255,243,232);
+    background: linear-gradient(180deg, rgba(255,243,232,1) 35%, rgba(201,250,247,1) 100%);
+}
+
+/*----- Palette de couleurs */
+:root {
+    --dark-font-color: #1E1E1E;
+    --submit-button: #3DC5E2;
+    --font-submit-button: #FFFFFF;
+    --superAdmin-button: #DB5050;
+    --solution: #7B7B7B;
+    --background-gamespace: #D9D9D9;
+}
+
+/*----- Commun à toutes les vues */
+
+
+/*----- Barre de navigation */
