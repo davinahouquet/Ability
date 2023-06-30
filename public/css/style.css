@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&display=swap');
+/*----- Commun à toutes les vues */
+
+*{
+    font-family: "M PLUS Rounded 1c";
+}
+
 html {
     height: 100%;
 }
@@ -19,9 +26,26 @@ body{
     --superAdmin-button: #DB5050;
     --solution: #7B7B7B;
     --background-gamespace: #D9D9D9;
+    --hover: #636363;
 }
 
-/*----- Commun à toutes les vues */
 
+/* Contient le logo et le nom */
+.ability-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
+/* Contient tous les éléments de navigation */
+ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.navigation-item{
+    color: var(--dark-font-color);
+    text-decoration: none;
+    text-align: right;
+}
 /*----- Barre de navigation */
