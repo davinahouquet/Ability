@@ -28,6 +28,9 @@ body{
     --hover: #636363;
 }
 
+a:hover{
+    color:rgb(98, 98, 98);
+}
 /*---------- Barre de navigation ----------*/
 
 nav{
@@ -35,7 +38,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(180deg, rgba(110,129,127,1), rgb(251,244,233) 42%);
+    /* background: linear-gradient(180deg, rgba(110,129,127,1), rgb(251,244,233) 42%); */
 }
 
 /* Le logo Ability */
@@ -76,7 +79,7 @@ footer{
     left: 0;
     width: 100%;
     height: 50px;
-    background: linear-gradient(180deg,  rgba(201,250,247,1), rgb(114, 145, 141) 100%);
+    /* background: linear-gradient(180deg,  rgba(201,250,247,1), rgb(114, 145, 141) 100%); */
 }
 
 .socials{
@@ -88,4 +91,18 @@ footer{
 #social-item{
     margin-right: 15px;
     color: var(--dark-font-color);
+}
+
+#social-item:hover{
+    color:rgb(98, 98, 98);
+}
+/*---------- Connexion ----------*/
+.container-form{
+    max-width: 50%;
+    background-color: #1E1E1E;
+}
+
+.form-input{
+    max-width: 35px;
+    background-color: #1E1E1E;
 }
