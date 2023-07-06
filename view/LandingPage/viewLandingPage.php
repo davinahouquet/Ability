@@ -16,5 +16,5 @@ ob_start();
 $titre = "Ability";
 $titre_secondaire = "Page d'accueil";
 $contenu = ob_get_clean();
-require "http://localhost/Ability/view/template.php";
+require "view/template.php";
 ?>

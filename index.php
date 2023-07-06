@@ -25,6 +25,7 @@ if(isset($_GET["action"])){
     switch ($_GET["action"]){
 
         //Connexion
+        case "landingPage" : $ctrlGame->landingPage(); break;
         case "connexion" : $ctrlConnexion->connexion(); break; //Aller à la page de connexion
         case "signin" : $ctrlConnexion->signin(); break; //Inscription
         case "login" : $ctrlConnexion->login(); break; //Connexion

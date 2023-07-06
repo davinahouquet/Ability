@@ -7,7 +7,7 @@ class GameController {
 
     //Retour à la page d'accueil
     public function landingPage(){
-       require "http://localhost/Ability/view/LandingPage/viewLandingPage.php";
+       require ("view/LandingPage/viewLandingPage.php");
     }
 }
 

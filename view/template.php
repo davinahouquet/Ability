@@ -14,7 +14,7 @@
     
     <nav>
         <div class="ability-logo">
-            <img class="logo" src="http://localhost/Ability/public/img/logo.png">
+            <a href="http://localhost/Ability/index.php?action=landingPage"><img class="logo" src="http://localhost/Ability/public/img/logo.png"></a>
         </div>
         <ul class="navigation">
             <p><a href="index.php?action=#" class="navigation-item">Catégories</a></p>
@@ -52,7 +52,7 @@
 <body>
     
     <main>
-        <!-- <?= $contenu ?> -->
+        <?= $contenu ?>
     </main>
 
 </body>
