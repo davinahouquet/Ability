@@ -23,7 +23,7 @@
             <?php
                 // if NOT connected...
             ?>
-            <p ><a href="http://localhost/Ability/index.php?action=connexion" class="navigation-item">Connexion</a></p>
+            <p><a href="http://localhost/Ability/index.php?action=connexion" class="navigation-item">Connexion</a></p>
             <div class="user-color"></div>
             <?php
                 //else if connected...

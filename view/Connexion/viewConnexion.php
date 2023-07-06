@@ -5,28 +5,28 @@ ob_start();
 
     <div class="inscription-container-form">
 
-        <form enctype='multipart/form-data' action="index.php?action=signin>" method="post" class="connexion-form">
+        <form enctype='multipart/form-data' action="index.php?action=register" method="post" class="connexion-form">
         
             <h1>S'inscrire</h1>
 
             <div class="form-input">
                 <label for="account-name">Nom du compte</label>
-                <input type="text" placeholder="Groupe vert" name="account-name" value="">
+                <input type="text" placeholder="Nom du compte" name="pseudo">
             </div>
             <div class="form-input">
                 <label for="email">Adresse Mail</label>
-                <input type="email" placeholder="Last Name" name="nom" value="">
+                <input type="email" placeholder="Adresse Mail" name="email">
             </div>
             <div class="form-input">
                 <label for="password">Mot de passe</label>
-                <input type="email" placeholder="Last Name" name="nom" value="">
+                <input type="password" placeholder="Mot de passe" name="password">
             </div>
             <div class="form-input">
                 <label for="password">Confirmez le mot de passe</label>
-                <input type="email" placeholder="Last Name" name="nom" value="">
+                <input type="password" placeholder="Confirmez mot de passe" name="password">
             </div>
             <div class="button-container">
-                <input type="submit" name="signin" class="submit-button">
+                <input type="submit" name="submitRegister" class="submit-button">
             </div>
         </form>
 
@@ -36,7 +36,7 @@ ob_start();
     
     <div class="connexion-container-form">
 
-        <form enctype='multipart/form-data' action="index.php?action=login>" method="post" class="connexion-form">
+        <form enctype='multipart/form-data' action="index.php?action=login" method="post" class="connexion-form">
         
             <h1>Se connecter</h1>
 
@@ -46,7 +46,8 @@ ob_start();
             </div>
             <div class="form-input">
                 <label for="password">Mot de passe</label>
-                <input type="email" placeholder="Last Name" name="nom" value="">
+                <input type="email" placeholder="**********" name="nom" value="">
+                <p class="mdp-oublie"><a href="#">Mot de passe oublié</a></p>
             </div>
             <div class="button-container">
                 <input type="submit" name="login" class="submit-button">

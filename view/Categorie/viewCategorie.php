@@ -4,16 +4,16 @@ ob_start();
 $categorie = $requeteCategorie->fetchAll();
 ?>
 
-    <section>
+    <section class="categorie">
 
         <table>
             <tr>
-                <th>Catégories</th>
+                <th class="th-categorie">Catégories</th>
             </tr>
                 <?php foreach($categorie as $categorie){
                 ?>
                  <tr>
-                    <td><?= $categorie["nom_categorie"] ?></td>
+                    <td class="td-categorie"><a href="#"><?= $categorie["nom_categorie"] ?></a></td>
                 <?php
                 }
                 ?>
