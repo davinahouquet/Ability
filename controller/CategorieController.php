@@ -6,8 +6,13 @@ use Model\Connect;
 class CategorieController {
 
     public function categorie(){
-       require "http://localhost/Ability/view/Connexion/viewConnexion.php";
+        $pdo = Connect::seConnecter();
+        $requeteCategorie = $pdo->query("
+            SELECT nom_categorie FROM categorie
+        ");
+       require ("view/Categorie/viewCategorie.php");
     }
+
 }
 
 ?>

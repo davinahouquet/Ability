@@ -31,7 +31,7 @@ if(isset($_GET["action"])){
         case "login" : $ctrlConnexion->login(); break; //Connexion
 
         // Categories
-        case "categories" : $ctrlCategorie->categorie(); break;
+        case "categorie" : $ctrlCategorie->categorie(); break;
 
     }
 }
