@@ -4,23 +4,33 @@ ob_start();
 $categorie = $requeteCategorie->fetchAll();
 ?>
 
+    <h1 class="h1-categorie">Catégories</h1>
+    
     <section class="categorie">
 
-        <table>
-            <tr>
-                <th class="th-categorie">Catégories</th>
-            </tr>
-                <?php foreach($categorie as $categorie){
-                ?>
-                 <tr>
-                    <td class="td-categorie"><a href="#"><?= $categorie["nom_categorie"] ?></a></td>
+        <div class="categorie-container">
+
+            <?php foreach($categorie as $categorie){
+            ?>
+                <div class="categorie-card">
+                    
+                    <?php
+                        if($categorie["image_categorie"] === NULL){
+                            echo "<a href='#'><img src='public/img/defaut.png' width='150'></a>";
+                        }
+                        else{
+                            echo "<a href='#'><img src='public/img/" .$categorie["image_categorie"]."' width='200'></a>";
+                        }
+                    ?>
+                    
+                    <a href="#"><?= $categorie["nom_categorie"] ?></a>
+                    
+                </div>
                 <?php
-                }
+            }
                 ?>
-            </tr>
-
-        </table>
-
+        
+        </div>
     </section>
 
 <?php

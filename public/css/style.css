@@ -176,14 +176,31 @@ footer{
 /*--------- VUE CATEGORIE ---------*/
 .categorie{
     max-width: 100%;
-    display: flex;
     justify-content: center;
+    display: flex;
+    flex-direction: row;
 }
 
-.th-categorie{
+.h1-categorie{
     font-size: 25px;
+    margin-left: 100px;
 }
 
-.td-categorie{
-    font-size: 20px;
+.categorie-container{
+    max-width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items:end;
+}
+
+.categorie-card{
+    font-weight: 500;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+    margin-right: 70px;
 }
