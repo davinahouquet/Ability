@@ -1,20 +1,44 @@
 <?php
 ob_start();
+$jeux = $requeteJeu->fetchAll();
+// $categorie = $requeteCategorie->fetch();
 ?>
 
-    <section class="landingPage">
+    <section>
 
+        <div class="landingPage">
+    <?php 
+    
+    foreach($jeux as $jeu){
 
+    ?>
         <div class="gameCard">
+    <?php
+        echo "<h2>". $jeu["nom_jeu"] ."</h2>";
 
+        if($jeu["image"] === NULL){
+            echo "<img src='public/img/defaut.png' width='200'>";
+        } else {
+            echo "<img src=". $jeu["image"] ." width='200'>";
+        }
+
+            echo "<p>". $jeu["consigne"] ."</p>";
+
+        // foreach($categorie as $categorie){
+        //     echo "<p>". $categorie["nom_categorie"] ."</p>";
+        // }
+        ?>
         </div>
-
+        <?php
+    }
+    ?>
+        </div>
 
     </section>
 
 <?php
 $titre = "Ability";
-$titre_secondaire = "Page d'accueil";
+$titre_secondaire = "Accueil";
 $contenu = ob_get_clean();
 require "view/template.php";
 ?>

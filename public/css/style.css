@@ -49,7 +49,7 @@ input{
     --font-submit-button: #FFFFFF;
     --superAdmin-button: #DB5050;
     --solution: #a3a3a3;
-    --background-gamespace: #D9D9D9;
+    --background-gamespace: #f7dba8;
     --hover: #636363;
     --input: #d6d6d6;
 }
@@ -203,4 +203,32 @@ footer{
     flex-direction: column;
     margin-left: 70px;
     margin-right: 70px;
+}
+
+/*---------- VUE LANDING PAGE JEU ----------*/
+/* Contient toutes les cartes jeux */
+.landingPage{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Carte jeu (Nom_jeu + img + consigne + categories) */
+.gameCard{
+    min-width: 300px;
+    min-height: 400px;
+    margin: 50px;
+    border-radius: 10px;
+    background-color: var(--background-gamespace);
+    margin-bottom: 50px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 10px 5px 5px rgb(133, 133, 133);
+    transition: 0.7s;
+}
+
+.gameCard:hover{
+    transform: translateY(-20px);
+    transition: 0.7s;
 }
