@@ -21,6 +21,15 @@ class GameController {
         // $requeteCategorie->execute(["id" => $id]);
        require ("view/LandingPage/viewLandingPage.php");
     }
+
+    // 
+    public function jeu(){
+        $pdo = Connect::seConnecter();
+        $requeteJeu = $pdo->prepare("
+            SELECT id_jeu, nom_jeu, consigne, image FROM jeu WHERE id_jeu = :id
+        ");
+        $requeteJeu->execute(["id" => $id]);
+    }
 }
 
 ?>

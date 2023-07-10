@@ -12,7 +12,7 @@ $jeux = $requeteJeu->fetchAll();
     foreach($jeux as $jeu){
 
     ?>
-        <div class="gameCard">
+        <a href="index.php?action=jeu&id=<?= $id ?>"><div class="gameCard">
     <?php
         echo "<h2>". $jeu["nom_jeu"] ."</h2>";
 
@@ -28,7 +28,7 @@ $jeux = $requeteJeu->fetchAll();
         //     echo "<p>". $categorie["nom_categorie"] ."</p>";
         // }
         ?>
-        </div>
+        </div></a>
         <?php
     }
     ?>

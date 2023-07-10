@@ -1,5 +1,6 @@
 <?php
 ob_start();
+// $session = $requeteSession->fetchAll();
 ?>
 
     <div class="user-session">
@@ -21,6 +22,8 @@ ob_start();
 
 
 <?php
-$titre = "User Session";
-$contenu = ob_get_clean();
-require "view/template.php";
+    $titre = "Ability";
+    $titre_secondaire = "Session";
+    $contenu = ob_get_clean();
+    require "../../view/template.php";
+?>
