@@ -33,10 +33,10 @@ if(isset($_GET["action"])){
         case "login" : $ctrlConnexion->login(); break; //Connexion
 
         // Sessions
-        case "Session" : $ctrlConnexion->
+        // case "Session" : $ctrlConnexion->
 
         // Jeux
-        case "jeu" : $ctrlGame->jeu(); break;
+        // case "jeu" : $ctrlGame->jeu(); break;
         
         // Categories
         case "categorie" : $ctrlCategorie->categorie(); break;

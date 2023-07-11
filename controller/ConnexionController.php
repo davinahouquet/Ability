@@ -11,6 +11,7 @@ class ConnexionController {
 
             $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+            $couleur = filter_input(INPUT_POST, "couleur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $password1 = filter_input(INPUT_POST, "password1", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
@@ -26,27 +27,27 @@ class ConnexionController {
                 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
                     
                 //Et on ajoute l'utilisateur dans la base de données
-                $requete=$pdo->prepare("INSERT INTO utilisateur (pseudo, email, password)
-                                    VALUES (:pseudo, :email, :password)");
+                $requete=$pdo->prepare("INSERT INTO utilisateur (pseudo, email, couleur, password, role)
+                                    VALUES (:pseudo, :email, :couleur, :password, 'admin')");
                 $requete->execute([
                     "pseudo"=>$pseudo,
                     "email"=>$email,
+                    "couleur"=>$couleur,
                     "password"=>$passwordHash,
                 ]);
                 // var_dump($passwordHash);die;         
             }
             header("Location:index.php?action=login");
-            require ("view/Connexion/viewConnexion.php");
+            require "view/Connexion/viewConnexion.php";
         }
     }
     // Aller à la page de connexion
     public function connexion(){
-        require ("view/Connexion/viewConnexion.php"); //On relie par un "require" la vue qui nous intéresse (située dans le dossier "view")
+        require "view/Connexion/viewConnexion.php"; //On relie par un "require" la vue qui nous intéresse (située dans le dossier "view")
     }
     
     // Aller à la page de connexion Login
     public function login(){
-        require("view/Connexion/viewLogin.php");
-        header("Location:index.php?action=login");
+        require "view/Connexion/viewLogin.php";
     }
 }

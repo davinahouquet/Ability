@@ -22,9 +22,13 @@
 
             <!-- CONNEXION - COMPTE - UTILISATEURS - ADMIN -->
             <?php
-                // if NOT connected...
+                // if connected...
+                if(isset($_SESSION["pseudo"])){
+                    echo $_SESSION["pseudo"];
+                } else {
+                    echo "<p><a href='index.php?action=connexion' class='navigation-item'>Connexion</a></p>";
+                }
             ?>
-            <p><a href="http://localhost/Ability/index.php?action=connexion" class="navigation-item">Connexion</a></p>
             <div class="user-color"></div>
             <?php
                 //else if connected...

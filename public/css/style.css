@@ -115,7 +115,7 @@ footer{
 .socials{
     display: flex;
     justify-content: center;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 #social-item{
@@ -173,38 +173,17 @@ footer{
     font-size: 10px;
     margin-top: 10px;
 }
-/*--------- VUE CATEGORIE ---------*/
-.categorie{
-    max-width: 100%;
-    justify-content: center;
+
+.nom-couleur{
     display: flex;
     flex-direction: row;
 }
 
-.h1-categorie{
-    font-size: 25px;
-    margin-left: 100px;
-}
-
-.categorie-container{
-    max-width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    flex-wrap: wrap;
-    text-align: center;
-    align-items:end;
-}
-
-.categorie-card{
-    font-weight: 500;
+#color{
+    min-height: 40px;
+    min-width: 70px;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    margin-left: 70px;
-    margin-right: 70px;
 }
-
 /*---------- VUE LANDING PAGE JEU ----------*/
 /* Contient toutes les cartes jeux */
 .landingPage{
@@ -229,6 +208,47 @@ footer{
 }
 
 .gameCard:hover{
+    transform: translateY(-20px);
+    transition: 0.7s;
+}
+
+/*--------- VUE CATEGORIE ---------*/
+.categorie{
+    max-width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.h1-categorie{
+    font-size: 25px;
+    margin-left: 100px;
+}
+
+.categorie-container{
+    max-width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items:end;
+}
+
+.categorie-card{
+    min-width: 200px;
+    min-height: 200px;
+    background-color: #a3e0ee;
+    font-weight: 500;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 35px 20px 35px;
+    padding: 10px;
+    box-shadow: 10px 5px 5px rgb(133, 133, 133);
+    transition: 0.7s;
+}
+.categorie-card:hover{
     transform: translateY(-20px);
     transition: 0.7s;
 }

@@ -9,10 +9,17 @@ ob_start();
         
             <h1>S'inscrire</h1>
 
-            <div class="form-input">
-                <label for="account-name">Nom du compte</label>
-                <input type="text" placeholder="Nom du compte" name="pseudo">
+            <div class="nom-couleur">
+                <div class="form-input">
+                    <label for="account-name">Nom du compte</label>
+                    <input type="text" placeholder="Nom du compte" name="pseudo">
+                </div>
+                <div class="form-input">
+                    <label for="account-name">Couleur</label>
+                    <input type="color" name="couleur" id="color">
+                </div>
             </div>
+
             <div class="form-input">
                 <label for="email">Adresse Mail</label>
                 <input type="email" placeholder="Adresse Mail" name="email">
