@@ -4,7 +4,13 @@ namespace Controller;
 use Model\Connect; //On remarquera ici l'utilisation du "use" pour accéder à la classe Connect située dans le namespace "Model"
 
 class ConnexionController {
+    
+    // Aller à la page de choix de connexion
+    public function connexion(){
+        require "view/Connexion/viewConnexion.php";
+    }
 
+    // Formulaire d'inscription
     public function register(){
 
         if(isset($_POST["submitRegister"])){
@@ -36,18 +42,14 @@ class ConnexionController {
                     "password"=>$passwordHash,
                 ]);
                 // var_dump($passwordHash);die;         
+                header("Location: index.php?action=login");
             }
-            header("Location:index.php?action=login");
-            require "view/Connexion/viewConnexion.php";
         }
-    }
-    // Aller à la page de connexion
-    public function connexion(){
-        require "view/Connexion/viewConnexion.php"; //On relie par un "require" la vue qui nous intéresse (située dans le dossier "view")
+        // require "view/Connexion/viewConnexion.php";
     }
     
     // Aller à la page de connexion Login
     public function login(){
-        require "view/Connexion/viewLogin.php";
+        require "Ability/view/Connexion/viewLogin.php";
     }
 }

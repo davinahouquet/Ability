@@ -12,7 +12,7 @@ ob_start();
             <div class="nom-couleur">
                 <div class="form-input">
                     <label for="account-name">Nom du compte</label>
-                    <input type="text" placeholder="Nom du compte" name="pseudo">
+                    <input type="text" placeholder="Nom du compte" name="pseudo" required>
                 </div>
                 <div class="form-input">
                     <label for="account-name">Couleur</label>
@@ -22,15 +22,15 @@ ob_start();
 
             <div class="form-input">
                 <label for="email">Adresse Mail</label>
-                <input type="email" placeholder="Adresse Mail" name="email">
+                <input type="email" placeholder="Adresse Mail" name="email" required>
             </div>
             <div class="form-input">
                 <label for="password">Mot de passe</label>
-                <input type="password" placeholder="Mot de passe" name="password">
+                <input type="password" placeholder="Mot de passe" name="password" required>
             </div>
             <div class="form-input">
                 <label for="password">Confirmez le mot de passe</label>
-                <input type="password" placeholder="Confirmez mot de passe" name="password">
+                <input type="password" placeholder="Confirmez mot de passe" name="password" required>
             </div>
             <div class="button-container">
                 <input type="submit" name="submitRegister" class="submit-button">
@@ -49,11 +49,11 @@ ob_start();
 
             <div class="form-input">
                 <label for="account-name">Adresse Mail</label>
-                <input type="text" placeholder="Groupe vert" name="account-name" value="">
+                <input type="text" placeholder="Groupe vert" name="account-name" value="" required>
             </div>
             <div class="form-input">
                 <label for="password">Mot de passe</label>
-                <input type="email" placeholder="**********" name="nom" value="">
+                <input type="email" placeholder="**********" name="nom" value="" required>
                 <p class="mdp-oublie"><a href="#">Mot de passe oublié</a></p>
             </div>
             <div class="button-container">

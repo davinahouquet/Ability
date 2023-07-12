@@ -183,6 +183,7 @@ footer{
     min-height: 40px;
     min-width: 70px;
     border-radius: 10px;
+    padding: 5px;
 }
 /*---------- VUE LANDING PAGE JEU ----------*/
 /* Contient toutes les cartes jeux */
