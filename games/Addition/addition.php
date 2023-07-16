@@ -1,4 +1,6 @@
-
+<?php
+ob_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,40 +11,39 @@
 </head>
 <body>
     
-
-
-<?php
-$nombre1 = rand(0, 10); // Génère un nombre aléatoire entre 0 et 100
-$nombre2 = rand(0, 10); // Génère un autre nombre aléatoire entre 0 et 100
-
-$resultat = $nombre1 + $nombre2; // Calcule le résultat de l'addition
-
-// Affiche l'opération et demande au joueur de deviner le résultat
-
-?>
-
-    <div class="addition-container">
-
-        <div class="question">
-            <?php echo "Combien font $nombre1 + $nombre2 ?\n"; ?>
-        </div>
-
-    </div>
-
-<?php
-// Lit la réponse du joueur depuis l'entrée standard
-$reponseJoueur = readline("Votre réponse : ");
-
-// Vérifie si la réponse du joueur est correcte
-if ($reponseJoueur == $resultat) {
-    echo "Bravo, c'est la bonne réponse !";
-} else {
-    echo "Désolé, la réponse correcte était $resultat."; 
-}
-?>
-
-
-
-
 </body>
 </html>
+
+<?php
+      
+        $calca = mt_rand(1,10);
+        $calcb = mt_rand(1,10);
+        $result = $calca + $calcb;
+          
+        echo'
+                <div id="addition">
+                        <h1>Addition</h1>
+                                <form method="post" action="" id="formulaire" enctype="multipart/form-data"><br>
+                                    <input type="int"        name="rep"  id="rep"    size="20"   minlength="2"   maxlength="3"   placeholder="'.$calca.' + '.$calcb.'"/><br>
+                                    <input type="submit" value="Réponse" name="envoi_recup" onclick="test()" />
+                                </form>
+                </div>
+        ';            
+  
+ echo' <script>
+ function test(){
+ 
+            var result = parseInt('.$calca.')+parseInt('.$calcb.')
+             alert("Le résultat est " + result + ".");
+ }
+ </script>';
+          
+              
+?>
+
+<?php
+$titre = "Ability";
+$titre_secondaire = "Addition";
+$game = ob_get_clean();
+require "../../games/templateGame.php";
+?>

@@ -41,11 +41,11 @@ class ConnexionController {
                     "couleur"=>$couleur,
                     "password"=>$passwordHash,
                 ]);
-                // var_dump($passwordHash);die;         
+                var_dump($passwordHash);die;         
                 header("Location: index.php?action=login");
             }
         }
-        // require "view/Connexion/viewConnexion.php";
+        require "view/Connexion/viewConnexion.php";
     }
     
     // Aller à la page de connexion Login
