@@ -55,14 +55,25 @@
 </header>
 
 <body>
-    
-    <div class="titre-consigne-container">
-        
-    </div>
-
-
     <main>
-        <?= $game ?>
+
+        <!-- Contient la description et le jeu -->
+        <div class="description-jeu-container">
+            <!-- Contient le nom du jeu et la consigne -->
+            <div class="titre-consigne">
+                <h1><?= $nomJeu ?></h1>
+                <h2>Niveau <?= $level ?></h2>
+                <p>Categories (à faire)</p>
+            </div>
+
+            <!-- Contient l'espace jeu -->
+            <div class="jeu-container">
+                <div class="jeu">
+                    <?= $game ?>
+                </div>
+            </div>
+        </div>
+
     </main>
 
 </body>

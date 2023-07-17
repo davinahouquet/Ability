@@ -31,10 +31,11 @@ class ConnexionController {
 
                 //S'ils le sont, on hache le mot de passe
                 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-                    
+
+                $pdo = Connect::seConnecter();
                 //Et on ajoute l'utilisateur dans la base de données
-                $requete=$pdo->prepare("INSERT INTO utilisateur (pseudo, email, couleur, password, role)
-                                    VALUES (:pseudo, :email, :couleur, :password, 'admin')");
+                $requete=$pdo->prepare("INSERT INTO utilisateur (pseudo, couleur, email, password, role)
+                                    VALUES (:pseudo, :couleur, :email, :password, 'admin')");
                 $requete->execute([
                     "pseudo"=>$pseudo,
                     "email"=>$email,
@@ -42,8 +43,8 @@ class ConnexionController {
                     "password"=>$passwordHash,
                 ]);
                 var_dump($passwordHash);die;         
-                header("Location: index.php?action=login");
             }
+            header("Location: index.php?action=login");
         }
         require "view/Connexion/viewConnexion.php";
     }

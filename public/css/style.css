@@ -49,7 +49,7 @@ input{
     --font-submit-button: #FFFFFF;
     --superAdmin-button: #DB5050;
     --solution: #a3a3a3;
-    --background-gamespace: #f7dba8;
+    --background-gamespace: #efdbb5;
     --hover: #636363;
     --input: #d6d6d6;
 }
@@ -73,7 +73,7 @@ nav{
 
 /* Le logo Ability */
 .logo{
-    max-width: 210px;
+    max-width: 200px;
     padding-left: 10px;
 }
 /* Contient tous les éléments de navigation */
