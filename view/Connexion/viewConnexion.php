@@ -30,7 +30,7 @@ ob_start();
             </div>
             <div class="form-input">
                 <label for="password">Confirmez le mot de passe</label>
-                <input type="password" placeholder="Confirmez mot de passe" name="password" required>
+                <input type="password" placeholder="Confirmez mot de passe" name="password1" required>
             </div>
             <div class="button-container">
                 <input type="submit" name="submitRegister" class="submit-button">

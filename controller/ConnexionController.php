@@ -19,7 +19,11 @@ class ConnexionController {
             $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
             $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $password1 = filter_input(INPUT_POST, "password1", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            var_dump($pseudo);die;
+            // var_dump($pseudo);
+            // var_dump($couleur);
+            // var_dump($email);
+            // var_dump($password);
+            // var_dump($password1);die;
             if($pseudo && $email && $password && $password1){
 
                 //Si les mots de passe ne sont pas identitques : échec
