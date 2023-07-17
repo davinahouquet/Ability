@@ -33,22 +33,26 @@
             <?php
                 //else if connected...
             ?>
-            <!-- <p class=""><a href="index.php?action=account&id=#">$account-name</a></p> -->
+            <!-- <p class=""><a href="index.php?action=account&id=#">$account-name</a></p>
+                <input type="color" value="..."> -->
 
             <?php
                 //else if username...
             ?>
-            <!-- <p class=""><a href="index.php?action=username&id=#">$username</a></p> -->
+            <!-- <p class=""><a href="index.php?action=username&id=#">$username</a></p>
+                <input type="color" value="..."> -->
 
             <?php
                 //else if Admin...
             ?>
-            <!-- <p class=""><a href="index.php?action=#">Admin</a></p> -->
+            <!-- <p class=""><a href="index.php?action=#">Admin</a></p>
+                <input type="color" value="..."> -->
 
             <?php
                 //else ...
             ?>
-            <!-- <p class=""><a href="index.php?action=#">Super Admin</a></p> -->
+            <!-- <p class=""><a href="index.php?action=#">Super Admin</a></p>
+                <input type="color" value="..."> -->
 
         </ul>
     </nav>

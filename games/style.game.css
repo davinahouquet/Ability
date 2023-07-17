@@ -182,3 +182,11 @@ footer{
     box-shadow: 10px 5px 5px rgb(133, 133, 133);
     cursor: pointer;
 }
+
+.infos-joueur{
+    margin-top: 50px;
+}
+
+.categories{
+    margin-top: 50px;
+}

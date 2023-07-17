@@ -26,4 +26,4 @@ ob_start();
 <?php
 $titre = "Connexion";
 $contenu = ob_get_clean();
-require "../../view/template.php";
+require "view/template.php";

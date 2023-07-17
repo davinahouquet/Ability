@@ -63,7 +63,11 @@
             <div class="titre-consigne">
                 <h1><?= $nomJeu ?></h1>
                 <h2>Niveau <?= $level ?></h2>
-                <p>Categories (à faire)</p>
+                <div class="infos-joueur">
+                    <p>(si pas connecté)<a href="#">Connectez-vous</a> pour sauvegarder votre progression</p>
+                    <p>(si connecté)Niveau : /numéro du niveau/</p>
+                </div>
+                <p class="categories">Categories (à faire)</p>
             </div>
 
             <!-- Contient l'espace jeu -->
