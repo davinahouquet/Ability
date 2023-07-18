@@ -55,6 +55,33 @@ class ConnexionController {
     
     // Aller à la page de connexion Login
     public function login(){
+
+        $pdo = Connect::seConnecter();
+        
+        if(isset($_POST["submitLogin"])){
+            $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+            $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    
+            if($email && $password){
+                $requete = $pdo->prepare("SELECT * FROM utilisateur WHERE email = :email");
+                $requete->execute(["email" => $email]);
+                $utilisateur = $requete->fetch();
+    
+                if($utilisateur && password_verify($password, $utilisateur['password'])){
+                    // Connexion réussie
+                    echo "Login successful!";
+                    $_SESSION['id_utilisateur'] = $utilisateur['id_utilisateur']; // Stockage de l'id_utilisateur dans la session
+                    $_SESSION['username'] = $utilisateur['username']; // Stockage du nom d'utilisateur dans la session
+                    header("Location: index.php?action=session");
+                    exit;
+                } else {
+                    // Identifiants invalides
+                    echo "Invalid email or password";
+                }
+            }
+        }
+        
         require "view/Connexion/viewLogin.php";
     }
+    
 }

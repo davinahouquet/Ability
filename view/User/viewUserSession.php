@@ -25,5 +25,5 @@ ob_start();
     $titre = "Ability";
     $titre_secondaire = "Session";
     $contenu = ob_get_clean();
-    require "../../view/template.php";
+    require "view/template.php";
 ?>
