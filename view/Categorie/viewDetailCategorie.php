@@ -1,15 +1,17 @@
 <?php
 ob_start();
-$jeux = $requeteJeu->fetchAll();
-// $categorie = $requeteCategorie->fetch();
+
+$categorie = $requeteCategoriser->fetchAll();
 ?>
 
-    <section>
+    <h1 class="h1-categorie"><?= $categorie["nom_categorie"] ?></h1>
+    
+    <section class="categorie">
 
-        <div class="landingPage">
+    <div class="landingPage">
     <?php 
     
-    foreach($jeux as $jeu){
+    foreach($categorie as $jeu){
 
     ?>
         <a href="index.php?action=jeu&id=<?= $id ?>"><div class="gameCard">
@@ -23,23 +25,18 @@ $jeux = $requeteJeu->fetchAll();
         }
 
             echo "<p>". $jeu["consigne"] ."</p>";
-
-        // foreach($categorie as $categorie){
-        //     echo "<p>". $categorie["nom_categorie"] ."</p>";
-        // }
         ?>
         </div></a>
         <?php
     }
     ?>
         </div>
-        <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> -->
 
     </section>
 
 <?php
 $titre = "Ability";
-$titre_secondaire = "Accueil";
+$titre_secondaire = "Categorie";
 $contenu = ob_get_clean();
 require "view/template.php";
 ?>

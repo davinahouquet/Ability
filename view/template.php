@@ -28,8 +28,14 @@
                 } else {
                     echo "<p><a href='index.php?action=connexion' class='navigation-item'>Connexion</a></p>";
                 }
+
+            if(isset($_SESSION["couleur"])){
+                echo "<div class='user-color 'style='background-color:". $utilisateur['couleur'] .";'></div>";
+            } else {
+                echo "<div class='user-color 'style='background-color:'rgb(0,255,255)';'></div>";
+            }
             ?>
-            <div class="user-color"></div>
+    
             <?php
                 //else if connected...
             ?>

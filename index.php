@@ -3,7 +3,7 @@
 //On use les controllers
 use Controller\GameController;
 use Controller\CategorieController;
-use Controller\ConnexionController;
+// use Controller\ConnexionController;
 use Controller\SessionController;
 
 //On autocharge les classes du projet
@@ -13,7 +13,7 @@ spl_autoload_register(function($class_name){
 
 //On instancie les controller
 $ctrlGame = new GameController();
-$ctrlConnexion = new ConnexionController();
+// $ctrlConnexion = new ConnexionController();
 $ctrlCategorie = new CategorieController();
 $ctrlSession = new SessionController();
 
@@ -28,19 +28,19 @@ if(isset($_GET["action"])){
 
         // Connexion
         case "landingPage" : $ctrlGame->landingPage(); break;
-        case "connexion" : $ctrlConnexion->connexion(); break; //Aller à la page de connexion
-        case "register" : $ctrlConnexion->register(); break; //Inscription
-        case "login" : $ctrlConnexion->login(); break; //Connexion
+        case "connexion" : $ctrlSession->connexion(); break; //Aller à la page de connexion
+        case "register" : $ctrlSession->register(); break; //Inscription
+        case "login" : $ctrlSession->login(); break; //Connexion
 
         // Sessions
-        case "session" : $ctrlSession->session(); break;
+        case "session" : $ctrlSession->session(); break; 
 
         // Jeux
         // case "jeu" : $ctrlGame->jeu(); break;
         
         // Categories
-        case "categorie" : $ctrlCategorie->categorie(); break;
-
+        case "categorie" : $ctrlCategorie->categorie($id); break;
+        case "categoriser" : $ctrlCategorie->categoriser($id); break;
     }
 }
 ?>

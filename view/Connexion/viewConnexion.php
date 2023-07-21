@@ -53,11 +53,11 @@ ob_start();
             </div>
             <div class="form-input">
                 <label for="password">Mot de passe</label>
-                <input type="email" placeholder="**********" name="nom" value="" required>
+                <input type="password" placeholder="**********" name="nom" value="" required>
                 <p class="mdp-oublie"><a href="#">Mot de passe oublié</a></p>
             </div>
             <div class="button-container">
-                <input type="submit" name="login" class="submit-button">
+                <input type="submit" name="submitLogin" class="submit-button">
             </div>
         </form>
         

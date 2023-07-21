@@ -16,26 +16,25 @@ $categorie = $requeteCategorie->fetchAll();
                     
                     <?php
                         if($categorie["image_categorie"] === NULL){
-                            echo "<a href='#'><img src='public/img/defaut.png' width='150'></a>";
+                            echo "<a href='index.php?action=categoriser&id=".$categorie["id_categorie"]."'><img src='public/img/defaut.png' width='150'></a>";
                         }
                         else{
-                            echo "<a href='#'><img src='public/img/" .$categorie["image_categorie"]."' width='200'></a>";
+                            echo "<a href='index.php?action=categoriser&id=".$categorie["id_categorie"]."'><img src='public/img/" .$categorie["image_categorie"]."' width='200'></a>";
                         }
                     ?>
-                    
-                    <a href="#"><?= $categorie["nom_categorie"] ?></a>
-                    
+                    <a href="index.php?action=categoriser&id=<?=$id?>"><?= $categorie["nom_categorie"] ?></a>
                 </div>
                 <?php
             }
                 ?>
         
         </div>
+       
     </section>
 
 <?php
 $titre = "Ability";
-$titre_secondaire = "Categorie";
+$titre_secondaire = "Categories";
 $contenu = ob_get_clean();
 require "view/template.php";
 ?>

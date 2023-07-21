@@ -7,12 +7,26 @@ class CategorieController {
 
     public function categorie(){
         $pdo = Connect::seConnecter();
+        
         $requeteCategorie = $pdo->query("
-            SELECT nom_categorie, image_categorie FROM categorie
+            SELECT id_categorie, nom_categorie, image_categorie FROM categorie
         ");
+        
        require ("view/Categorie/viewCategorie.php");
     }
 
+    public function categoriser(){
+        $pdo = Connect::seConnecter();
+        $requeteCategoriser = $pdo->prepare("
+        SELECT categorie.id_categorie, categorie.nom_categorie, j.id_jeu, j.nom_jeu, j.consigne, j.image FROM jeu j
+        JOIN categoriser c ON c.id_jeu = j.id_jeu
+        JOIN categorie ON categorie.id_categorie = c.id_categorie
+        WHERE c.id_categorie = :id 
+        ");
+        $requeteCategoriser->execute(["id"=>$id]);
+
+        require ("view/Categorie/viewDetailCategorie.php");
+    }
 }
 
 ?>

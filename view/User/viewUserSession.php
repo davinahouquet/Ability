@@ -7,16 +7,13 @@ ob_start();
         
         <h2 class="h2-user">
             <?php
-                if(isset($_SESSION["username"])){
-                    echo $_SESSION["username"];
+                if(isset($_SESSION["pseudo"])){
+                    echo $_SESSION["pseudo"];
                 } else {
                     echo "Log in";
                 }
-            ?></h2><hr><br>
-        <a href="#" class="a-session"><i class="fa-solid fa-heart"></i>  Favorites movies</a><br><br><hr><br>
-        <a href="#" class="a-session"><i class="fa-regular fa-clock"></i>  To watch later</a><br><br><hr><br>
-        <a href="index.php?action=logout" class="a-session"><i class="fa-solid fa-power-off"></i> Logout</a><br><br><hr><br>
-        <a href="index.php?action=deleteAccount" class="a-session"><i class="fa-solid fa-trash"></i> Delete Account</a>
+            ?></h2>
+        
         
     </div>
 
