@@ -1,17 +1,21 @@
 <?php
 ob_start();
-// $session = $requeteSession->fetchAll();
+$utilisateur = $requeteSession->fetchAll();
 ?>
 
     <div class="user-session">
         
         <h2 class="h2-user">
             <?php
-                if(isset($_SESSION["pseudo"])){
-                    echo $_SESSION["pseudo"];
+
+            echo $utilisateur["email"];
+
+                if(isset($utilisateur["pseudo"])){
+                    echo $utilisateur["pseudo"];
                 } else {
                     echo "Log in";
                 }
+                
             ?></h2>
         
         

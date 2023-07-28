@@ -72,7 +72,8 @@ public function login(){
                 session_start();
                 echo "Login successful!";
                 $_SESSION['id_utilisateur'] = $utilisateur['id_utilisateur']; // Stockage de l'id_utilisateur dans la session
-                $_SESSION['username'] = $utilisateur['username']; // Stockage du nom d'utilisateur dans la session
+                $_SESSION['pseudo'] = $utilisateur['pseudo']; // Stockage du nom d'utilisateur dans la session
+                $_SESSION['couleur'] = $utilisateur['couleur'];
                 header("Location: index.php?action=session");
                 exit;
             } else {
@@ -85,13 +86,14 @@ public function login(){
 }
 
 
-    public function session(){
+    public function session($id){
 
         $pdo = Connect::seConnecter();
         $requeteSession = $pdo->prepare("SELECT id_utilisateur, pseudo, couleur FROM utilisateur WHERE id_utilisateur = :id");
-         $utilisateur = $requeteSession->fetchAll();
-        // $requeteSession->execute(["id"=>$id]);
-
+        $requeteSession->execute(["id"=>$id]);
+        // $utilisateur = $requeteSession->fetchAll();
+        header("Location: index.php?action=landingPage");
         require("view/User/viewUserSession.php");
     }
+
 }

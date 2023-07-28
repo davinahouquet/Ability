@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="public/img/favicon1.ico.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="http://localhost/Ability/games/style.game.css">
-    <title>Ability/<?= $titre ?></title>
+    <title><?= $titre. "\ " .$titre_secondaire ?></title>
 </head>
 
 <header>
@@ -62,11 +62,14 @@
             <!-- Contient le nom du jeu et la consigne -->
             <div class="titre-consigne">
                 <h1><?= $nomJeu ?></h1>
+                <p><?= $consigne ?></p>
                 <h2>Niveau <?= $level ?></h2>
+
                 <div class="infos-joueur">
                     <p>(si pas connecté)<a href="#">Connectez-vous</a> pour sauvegarder votre progression</p>
                     <p>(si connecté)Niveau : /numéro du niveau/</p>
                 </div>
+                
                 <p class="categories">Categories (à faire)</p>
             </div>
 

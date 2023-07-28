@@ -13,8 +13,8 @@ body{
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background: rgb(255,243,232);
-    background: linear-gradient(180deg, rgba(255,243,232,1) 35%, rgba(201,250,247,1) 100%);
+    background: rgb(250,255,210);
+    background: radial-gradient(circle, rgba(250,255,210,1) 0%, rgba(194,255,248,1) 100%);
 }
 
 input{
@@ -23,7 +23,7 @@ input{
     border: none;
     border-radius: 10px;
     background-color: var(--input);
-    box-shadow: 10px 5px 5px rgb(133, 133, 133);
+    box-shadow: 5px 4px 5px rgb(150, 150, 150);
 }
 
 /* Contient le submit bouton */
@@ -51,7 +51,7 @@ input{
     --solution: #a3a3a3;
     --background-gamespace: #efdbb5;
     --hover: #636363;
-    --input: #d6d6d6;
+    --input: #eeeeee;
 }
 
 a{
@@ -204,7 +204,7 @@ footer{
     margin-bottom: 50px;
     text-align: center;
     padding: 20px;
-    box-shadow: 10px 5px 5px rgb(133, 133, 133);
+    box-shadow: 5px 4px 5px rgb(133, 133, 133);
     transition: 0.7s;
 }
 
@@ -246,7 +246,7 @@ footer{
     flex-direction: column;
     margin: 20px 35px 20px 35px;
     padding: 10px;
-    box-shadow: 10px 5px 5px rgb(133, 133, 133);
+    box-shadow: 5px 4px 5px rgb(133, 133, 133);
     transition: 0.7s;
 }
 .categorie-card:hover{

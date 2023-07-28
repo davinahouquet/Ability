@@ -2,19 +2,21 @@
 ob_start();
 
 $categorie = $requeteCategoriser->fetchAll();
+$detailJeu = $requeteJeu->fetchAll();
 ?>
 
-    <h1 class="h1-categorie"><?= $categorie["nom_categorie"] ?></h1>
-    
-    <section class="categorie">
 
+<section class="categorie">
     <div class="landingPage">
-    <?php 
+
+        <h1 class="h1-categorie"><?= $categorie["nom_categorie"] ?></h1>
+        <?php 
     
     foreach($categorie as $jeu){
 
     ?>
-        <a href="index.php?action=jeu&id=<?= $id ?>"><div class="gameCard">
+        <!-- <a href="index.php?action=jeu&id=<?= $detailJeu["id_jeu"] ?>"> -->
+        <div class="gameCard">
     <?php
         echo "<h2>". $jeu["nom_jeu"] ."</h2>";
 
@@ -26,7 +28,8 @@ $categorie = $requeteCategoriser->fetchAll();
 
             echo "<p>". $jeu["consigne"] ."</p>";
         ?>
-        </div></a>
+        </div>
+    <!-- </a> -->
         <?php
     }
     ?>

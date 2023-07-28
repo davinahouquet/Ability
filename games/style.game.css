@@ -13,8 +13,8 @@ body{
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background: rgb(255,243,232);
-    background: linear-gradient(180deg, rgba(255,243,232,1) 35%, rgba(201,250,247,1) 100%);
+    background: rgb(250,255,210);
+    background: radial-gradient(circle, rgba(250,255,210,1) 0%, rgba(194,255,248,1) 100%);
 }
 
 /* input{

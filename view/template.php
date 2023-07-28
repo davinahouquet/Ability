@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="public/img/favicon1.ico.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="http://localhost/Ability/public/css/style.css">
-    <title>Ability/<?= $titre ?></title>
+    <title><?= $titre. "\ " .$titre_secondaire ?></title>
 </head>
 
 <header>
@@ -23,14 +23,14 @@
             <!-- CONNEXION - COMPTE - UTILISATEURS - ADMIN -->
             <?php
                 // if connected...
-                if(isset($_SESSION["pseudo"])){
-                    echo $_SESSION["pseudo"];
+                if(isset($_SESSION['pseudo'])){
+                    echo "<p>".$_SESSION['pseudo']."</p>";
                 } else {
                     echo "<p><a href='index.php?action=connexion' class='navigation-item'>Connexion</a></p>";
                 }
-
-            if(isset($_SESSION["couleur"])){
-                echo "<div class='user-color 'style='background-color:". $utilisateur['couleur'] .";'></div>";
+// var_dump($utilisateur['pseudo']);die;
+            if(isset($_SESSION['couleur'])){
+                echo "<div class='user-color 'style='background-color:". $_SESSION['couleur'] .";'></div>";
             } else {
                 echo "<div class='user-color 'style='background-color:'rgb(0,255,255)';'></div>";
             }
