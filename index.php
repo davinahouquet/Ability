@@ -34,6 +34,7 @@ if(isset($_GET["action"])){
 
         // Sessions
         case "session" : $ctrlSession->session($id); break; 
+        case "deconnexion" : $ctrlSession->deconnexion(); break;
 
         // Jeux
         case "jeu" : $ctrlGame->jeu($id); break;

@@ -18,6 +18,7 @@
             <a href="http://localhost/Ability/index.php?action=landingPage"><img class="logo" src="http://localhost/Ability/public/img/logo.png"></a>
         </div>
         <ul class="navigation">
+            <p><a href="index.php?action=deconnexion">Déconnexion</a></p>
             <p><a href="index.php?action=categorie" class="navigation-item">Catégories</a></p>
 
             <!-- CONNEXION - COMPTE - UTILISATEURS - ADMIN -->
@@ -28,6 +29,7 @@
                 } else {
                     echo "<p><a href='index.php?action=connexion' class='navigation-item'>Connexion</a></p>";
                 }
+
 // var_dump($utilisateur['pseudo']);die;
             if(isset($_SESSION['couleur'])){
                 echo "<div class='user-color 'style='background-color:". $_SESSION['couleur'] .";'></div>";
@@ -35,7 +37,6 @@
                 echo "<div class='user-color 'style='background-color:'rgb(0,255,255)';'></div>";
             }
             ?>
-    
             <?php
                 //else if connected...
             ?>

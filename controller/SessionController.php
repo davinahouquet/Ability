@@ -96,4 +96,14 @@ public function login(){
         require("view/User/viewUserSession.php");
     }
 
+    // Se déconnecter
+     public function deconnexion(){
+        unset($_SESSION["id_utilisateur"]);
+        unset($_SESSION["pseudo"]);
+        unset($_SESSION["couleur"]);
+        session_unset();
+        echo "Vous avez été déconnecté";
+        header("Location: index.php?action=landingPage");
+        exit();
+    }
 }
