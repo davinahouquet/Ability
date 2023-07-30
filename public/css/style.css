@@ -40,7 +40,7 @@ input{
     font-weight: 700;
     padding: 15px;
     margin-top: 15px;
-    box-shadow: 10px 5px 5px rgb(78, 78, 78);
+    box-shadow: 5px 4px 5px rgb(165, 165, 165);
 }
 /*----- Palette de couleurs */
 :root {
@@ -252,4 +252,38 @@ footer{
 .categorie-card:hover{
     transform: translateY(-20px);
     transition: 0.7s;
+}
+
+/* VUE CONNEXION ADMIN ET SUPERADMIN*/
+.admin-connexion-container{
+    max-width: 100%;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-connexion-h1{
+    text-align: center;
+    margin: 15px;
+}
+
+.admin-connexion-password{
+    width: 400px;
+}
+
+.admin-connexion-button{
+    background-color: #DB5050;
+    color: var(--font-submit-button);
+    font-weight: 700;
+    padding: 15px;
+    margin-top: 15px;
+    box-shadow: 5px 4px 5px rgb(165, 165, 165);
+    border: none;
+    border-radius: 10px ;
+}
+
+.admin-connexion-superadmin{
+    color: var(--font-submit-button);
 }

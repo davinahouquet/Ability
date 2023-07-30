@@ -70,21 +70,21 @@ public function login(){
             if($utilisateur && password_verify($password, $utilisateur['password'])){
                 // Connexion réussie
                 session_start();
-                echo "Login successful!";
-                $_SESSION['id_utilisateur'] = $utilisateur['id_utilisateur']; // Stockage de l'id_utilisateur dans la session
-                $_SESSION['pseudo'] = $utilisateur['pseudo']; // Stockage du nom d'utilisateur dans la session
-                $_SESSION['couleur'] = $utilisateur['couleur'];
+                echo "Connexion réussie!";
+                    $_SESSION['id_utilisateur'] = $utilisateur['id_utilisateur']; // Stockage de l'id_utilisateur dans la session
+                    $_SESSION['pseudo'] = $utilisateur['pseudo']; // Stockage du nom d'utilisateur dans la session
+                    $_SESSION['couleur'] = $utilisateur['couleur'];
                 header("Location: index.php?action=session");
                 exit;
             } else {
                 // Identifiants invalides
-                echo "Invalid email or password";
+                echo "Identifiant ou mot de passe invalide";
             }
         }
     }
+    // require "view/Connexion/viewConnexion.php";
     require "view/Connexion/viewLogin.php";
 }
-
 
     public function session($id){
 
@@ -93,7 +93,7 @@ public function login(){
         $requeteSession->execute(["id"=>$id]);
         // $utilisateur = $requeteSession->fetchAll();
         header("Location: index.php?action=landingPage");
-        require("view/User/viewUserSession.php");
+        require "view/User/viewUserSession.php";
     }
 
     // Se déconnecter
