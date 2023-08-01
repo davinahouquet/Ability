@@ -24,6 +24,7 @@ ob_start();
     </div>
 
 <?php
-$titre = "Connexion";
+$titre = "Ability";
+$titre_secondaire = "Login";
 $contenu = ob_get_clean();
 require "view/template.php";

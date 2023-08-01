@@ -14,28 +14,62 @@
 <header>
     
     <nav>
+        <ul class="navigation">
+            <div class="ability-logo">
+                <a href="http://localhost/Ability/index.php?action=landingPage"><img class="logo" src="http://localhost/Ability/public/img/logo.png"></a>
+            </div>
+            <li><a href="index.php?action=categorie" class="navigation-item">Catégories</a></li>
+            <div class="dropdown-container">
+                <li class="dropdown">
+                    <a href="#"><?php
+                        // if connected...
+                        if(isset($_SESSION['pseudo'])){
+                            echo "<p>".$_SESSION['pseudo']."</p>";
+                        } else {
+                            echo "<p><a href='index.php?action=connexion' class='navigation-item'>Connexion</a></p>";
+                        }
+        
+        // var_dump($utilisateur['pseudo']);die;
+                    ?></a>
+                    <ul class="dropdown-content">
+                        <li><a href="index.php?action=loginAdmin">Paramètres</a></li>
+                        <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
+                    </ul>
+                </li>
+                <?php 
+                    if(isset($_SESSION['couleur'])){
+                        echo "<div class='user-color 'style='background-color:". $_SESSION['couleur'] .";'></div>";
+                    } else {
+                        echo "<div class='user-color 'style='background-color:'rgb(0,255,255)';'></div>";
+                    }
+                    ?>
+            </div>
+                
+                </ul>
+    </nav>
+
+    <!-- <nav>
         <div class="ability-logo">
             <a href="http://localhost/Ability/index.php?action=landingPage"><img class="logo" src="http://localhost/Ability/public/img/logo.png"></a>
         </div>
         <ul class="navigation">
             <p><a href="index.php?action=deconnexion">Déconnexion</a></p>
-            <p><a href="index.php?action=categorie" class="navigation-item">Catégories</a></p>
+            <p><a href="index.php?action=categorie" class="navigation-item">Catégories</a></p> -->
 
             <!-- CONNEXION - COMPTE - UTILISATEURS - ADMIN -->
             <?php
                 // if connected...
-                if(isset($_SESSION['pseudo'])){
-                    echo "<p>".$_SESSION['pseudo']."</p>";
-                } else {
-                    echo "<p><a href='index.php?action=connexion' class='navigation-item'>Connexion</a></p>";
-                }
+            //     if(isset($_SESSION['pseudo'])){
+            //         echo "<p>".$_SESSION['pseudo']."</p>";
+            //     } else {
+            //         echo "<p><a href='index.php?action=connexion' class='navigation-item'>Connexion</a></p>";
+            //     }
 
-// var_dump($utilisateur['pseudo']);die;
-            if(isset($_SESSION['couleur'])){
-                echo "<div class='user-color 'style='background-color:". $_SESSION['couleur'] .";'></div>";
-            } else {
-                echo "<div class='user-color 'style='background-color:'rgb(0,255,255)';'></div>";
-            }
+            // if(isset($_SESSION['couleur'])){
+            //     echo "<div class='user-color 'style='background-color:". $_SESSION['couleur'] .";'></div>";
+            // } else {
+            //     echo "<div class='user-color 'style='background-color:'rgb(0,255,255)';'></div>";
+            // }
             ?>
             <?php
                 //else if connected...

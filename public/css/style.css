@@ -63,14 +63,48 @@ a:hover{
 }
 /*---------- BARRE DE NAVIGATION ----------*/
 
-nav{
+/* nav{
     max-width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background: linear-gradient(180deg, rgba(110,129,127,1), rgb(251,244,233) 42%); */
-}
-
+} */
+nav {
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .dropdown-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  /* Styles pour le menu déroulant */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff00;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content li {
+    display: block;
+  }
 /* Le logo Ability */
 .logo{
     max-width: 200px;
@@ -78,19 +112,18 @@ nav{
 }
 /* Contient tous les éléments de navigation */
 .navigation{
-    font-size: 20px;
+    /* font-size: 20px; */
     display: flex;
     flex-direction: row;
-    justify-content: right;
     padding: 10px;
     align-items: center;
 }
-
+/* 
 .navigation-item{
     color: var(--dark-font-color);
     text-decoration: none;
     padding-right: 30px;
-}
+} */
 
 /* Rond de couleur */
 .user-color{
