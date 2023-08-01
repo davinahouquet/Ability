@@ -185,6 +185,11 @@ footer{
     border-radius: 10px;
     padding: 5px;
 }
+
+.login-container-form{
+    display: flex;
+    justify-content: center;
+}
 /*---------- VUE LANDING PAGE JEU ----------*/
 /* Contient toutes les cartes jeux */
 .landingPage{

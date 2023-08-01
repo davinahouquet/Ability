@@ -106,4 +106,13 @@ public function login(){
         header("Location: index.php?action=landingPage");
         exit();
     }
+
+    // Choix utilisateurs
+    public function utilisateur(){
+        $pdo = Connect::seConnecter();
+        $requeteUtilisateur = $pdo->prepare("SELECT * FROM utilisateur WHERE email = :email");
+        $requeteUtilisateur->execute(["email"=>$email]);
+
+        require "view/User/viewChoixUser.php";
+    }
 }

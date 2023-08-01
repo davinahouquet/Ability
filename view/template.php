@@ -83,5 +83,5 @@
 
 </footer>
 
-<script src="http://localhost/Ability/public/js/script.js"></script>
+<script src="js/script.js"></script>
 </html>

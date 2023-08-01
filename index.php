@@ -38,6 +38,7 @@ if(isset($_GET["action"])){
 
         // Jeux
         case "jeu" : $ctrlGame->jeu($id); break;
+        case "addGame" : $ctrlGame->addGame(); break;
         
         // Categories
         case "categorie" : $ctrlCategorie->categorie($id); break;

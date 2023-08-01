@@ -2,7 +2,7 @@
 ob_start();
 ?>
 
-<div class="connexion-container-form">
+<div class="login-container-form">
 
         <form enctype='multipart/form-data' action="index.php?action=login" method="post" class="connexion-form">
         
@@ -10,11 +10,11 @@ ob_start();
 
             <div class="form-input">
                 <label for="account-name">Adresse Mail</label>
-                <input type="email" name="email">
+                <input type="email" name="email" required>
             </div>
             <div class="form-input">
                 <label for="password">Mot de passe</label>
-                <input type="password" name="password">
+                <input type="password" name="password" required>
             </div>
             <div class="button-container">
                 <input type="submit" name="submitLogin" class="submit-button">
