@@ -31,6 +31,8 @@ if(isset($_GET["action"])){
         case "connexion" : $ctrlSession->connexion(); break; //Aller à la page de connexion
         case "register" : $ctrlSession->register(); break; //Inscription
         case "login" : $ctrlSession->login(); break; //Connexion
+        case "loginAdmin" : $ctrlSession->loginAdmin(); break; //Aller à la page de connexion Admin
+        case "loginSuperAdmin" : $ctrlSession->loginSuperAdmin(); break; //Aller à la page de connexion SuperAdmin
 
         // Sessions
         case "session" : $ctrlSession->session($id); break; 

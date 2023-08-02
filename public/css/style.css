@@ -49,9 +49,9 @@ input{
     --font-submit-button: #FFFFFF;
     --superAdmin-button: #DB5050;
     --solution: #a3a3a3;
-    --background-gamespace: #efdbb5;
+    --background-gamespace: #fff5e3;
     --hover: #636363;
-    --input: #eeeeee;
+    --input: #ffffff;
 }
 
 a{
@@ -70,11 +70,10 @@ a:hover{
     justify-content: space-between;
 } */
 nav {
+    max-width: 100%;
     font-size: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     padding: 10px;
+    display: flex;
     align-items: center;
   }
   
@@ -95,7 +94,10 @@ nav {
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #ffffff00;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
   }
   
   .dropdown:hover .dropdown-content {
@@ -112,18 +114,13 @@ nav {
 }
 /* Contient tous les éléments de navigation */
 .navigation{
-    /* font-size: 20px; */
+    width: 100%;
     display: flex;
     flex-direction: row;
     padding: 10px;
     align-items: center;
+    justify-content: right;
 }
-/* 
-.navigation-item{
-    color: var(--dark-font-color);
-    text-decoration: none;
-    padding-right: 30px;
-} */
 
 /* Rond de couleur */
 .user-color{
@@ -230,19 +227,20 @@ footer{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: left;
 }
 
 /* Carte jeu (Nom_jeu + img + consigne + categories) */
 .gameCard{
     min-width: 300px;
-    min-height: 400px;
+    min-height: 350px;
     margin: 50px;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: var(--background-gamespace);
     margin-bottom: 50px;
     text-align: center;
     padding: 20px;
-    box-shadow: 5px 4px 5px rgb(133, 133, 133);
+    box-shadow: 5px 4px 5px rgb(160, 160, 160);
     transition: 0.7s;
 }
 
@@ -272,19 +270,20 @@ footer{
     flex-wrap: wrap;
     text-align: center;
     align-items:end;
+    margin-bottom: 50px;
 }
 
 .categorie-card{
     min-width: 200px;
     min-height: 200px;
-    background-color: #a3e0ee;
+    background-color: #ffffff;
     font-weight: 500;
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     margin: 20px 35px 20px 35px;
     padding: 10px;
-    box-shadow: 5px 4px 5px rgb(133, 133, 133);
+    box-shadow: 5px 4px 5px rgb(158, 158, 158);
     transition: 0.7s;
 }
 .categorie-card:hover{

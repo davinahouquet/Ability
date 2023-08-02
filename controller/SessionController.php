@@ -115,4 +115,12 @@ public function login(){
 
         require "view/User/viewChoixUser.php";
     }
+
+    public function loginAdmin(){
+        require "view/Connexion/viewAdminConnexion.php";
+    }
+
+    public function loginSuperAdmin(){
+        require "view/Connexion/viewSuperAdminConnexion.php";
+    }
 }

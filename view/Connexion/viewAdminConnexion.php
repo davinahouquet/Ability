@@ -9,11 +9,11 @@ ob_start();
     
         <input type="submit" name="submitAdmin" class="submit-button">
     
-        <button class="admin-connexion-button"><a href="index.php?action=connexionSuperAdmin" class="admin-connexion-superadmin">Accès SuperAdmin</a></button>
+        <button class="admin-connexion-button"><a href="index.php?action=loginSuperAdmin" class="admin-connexion-superadmin">Accès SuperAdmin</a></button>
     </div>
 
 <?php
 $titre = "Ability";
 $titre_secondaire = "Admin";
 $contenu = ob_get_clean();
-require "../../view/template.php";
+require "view/template.php";
