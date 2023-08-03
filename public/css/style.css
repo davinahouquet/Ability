@@ -30,6 +30,9 @@ input{
     box-shadow: 5px 4px 5px rgb(150, 150, 150);
 }
 
+h1{
+    text-align: center;
+}
 /* Contient le submit bouton */
 .button-container{
     max-width: 100%;
@@ -53,7 +56,7 @@ input{
     --font-submit-button: #FFFFFF;
     --superAdmin-button: #DB5050;
     --solution: #a3a3a3;
-    --background-gamespace: #fff9f3;
+    --background-gamespace: #f3eee9;
     --hover: #636363;
     --input: #ffffff;
 }
@@ -66,17 +69,10 @@ a:hover{
     color:rgb(98, 98, 98);
 }
 /*---------- BARRE DE NAVIGATION ----------*/
-
-/* nav{
-    max-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-} */
 nav {
     max-width: 100%;
     font-size: 20px;
-    padding: 10px;
+    /* padding: 10px; */
     display: flex;
     align-items: center;
   }
@@ -89,6 +85,8 @@ nav {
     display: inline-block;
     margin-right: 20px;
   }
+
+  /* Contient le menu déroulant */
   .dropdown-container{
     display: flex;
     flex-direction: row;
@@ -100,7 +98,7 @@ nav {
     position: absolute;
     background-color: #ffffff;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
   }
   
@@ -135,6 +133,16 @@ nav {
     margin-right: 30px;
 }
 
+.user-color-dropdown{
+    min-width: 20px;
+    min-height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.utilisateur-dropdown{
+    font-size: 15px;
+}
 /*---------- FOOTER ----------*/
 
 footer{

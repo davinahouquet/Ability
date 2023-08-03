@@ -39,11 +39,11 @@ ob_start();
 
     </div>
 
-    <span class="vertical-line"></span>
+    <!-- <span class="vertical-line"></span>
     
     <div class="connexion-container-form">
 
-        <form enctype='multipart/form-data' action="index.php?action=login" method="post" class="connexion-form">
+        <form enctype='multipart/form-data' action="index.php?action=loginConnexion" method="post" class="connexion-form">
         
             <h1>Se connecter</h1>
 
@@ -59,7 +59,7 @@ ob_start();
             <div class="button-container">
                 <input type="submit" name="submitLogin" class="submit-button">
             </div>
-        </form>
+        </form> -->
         
     </div>
 </section>

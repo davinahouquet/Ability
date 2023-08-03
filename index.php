@@ -27,7 +27,7 @@ if(isset($_GET["action"])){
     switch ($_GET["action"]){
 
         // Connexion
-        case "landingPage" : $ctrlGame->landingPage($id); break;
+        case "landingPage" : $ctrlGame->landingPage($id); break; //Page d'accueil, page des jeux
         case "connexion" : $ctrlSession->connexion(); break; //Aller à la page de connexion
         case "register" : $ctrlSession->register(); break; //Inscription
         case "login" : $ctrlSession->login(); break; //Connexion
@@ -39,6 +39,7 @@ if(isset($_GET["action"])){
         case "deconnexion" : $ctrlSession->deconnexion(); break;
         case "parametre" : $ctrlSession->parametre(); break;
         case "landingPageSuperAdmin" : $ctrlSession->landingPageSuperAdmin(); break;
+        case "modifierUtilisateur" : $ctrlSession->modifierUtilisateur($id); break;
         case "supprimerUtilisateur" : $ctrlSession->supprimerUtilisateur($id); break;
 
         // Jeux

@@ -31,7 +31,6 @@ public function register(){
                 echo "Failed";
                 exit;
             } 
-
             //S'ils le sont, on hache le mot de passe
             $passwordHash = password_hash($password, PASSWORD_DEFAULT);
             
@@ -70,7 +69,7 @@ public function login(){
             if($utilisateur && password_verify($password, $utilisateur['password'])){
                 // Connexion réussie
                 session_start();
-                echo "Connexion réussie!";
+                echo "Connexion réussie";
                     $_SESSION['id_utilisateur'] = $utilisateur['id_utilisateur']; // Stockage de l'id_utilisateur dans la session
                     $_SESSION['pseudo'] = $utilisateur['pseudo']; // Stockage du nom d'utilisateur dans la session
                     $_SESSION['couleur'] = $utilisateur['couleur'];
@@ -150,25 +149,33 @@ public function login(){
     }
 
     // Fonction qui permet de modifier un nom d'utilisateur (Vue paramètres)
-    public function modifierUtilisateur(){
+    public function modifierUtilisateur($id){
+
         $pdo = Connect::seConnecter();
-        $requeteModifierUtilisateur = $pdo->prepare("
+
+        $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+
+        $requete = $pdo->prepare("SELECT * FROM utilisateur WHERE email = :email");
+        $requete->execute(["email"=>$email]);
+
+        // $requeteModifierUtilisateur = $pdo->prepare("
            
-        ");
-        $requeteModifierUtilisateur->execute([""]);
-        require "view/User/viewParametres.php";
+        // ");
+        // $requeteModifierUtilisateur->execute([""]);
+
+        require "view/User/viewUpdatePseudo.php";
     }
 
     // Fonction qui permet de supprimer un utilisateur (Vue paramètres)
     public function supprimerUtilisateur($id){
-        
+
         $pdo = Connect::seConnecter();
         // D'abord supprimer de la table progresser
-        $requeteSupprimerProgresser = $pdo->prepare("
-            DELETE FROM progresser
-            WHERE id_utilisateur = :id
-        ");
-        $requeteSupprimerProgresser->execute(["id"=>$id]);
+        // $requeteSupprimerProgresser = $pdo->prepare("
+        //     DELETE FROM progresser
+        //     WHERE id_utilisateur = :id
+        // ");
+        // $requeteSupprimerProgresser->execute(["id"=>$id]);
 
         $requeteSupprimerUtilisateur = $pdo->prepare("
             DELETE FROM utilisateur
@@ -179,4 +186,5 @@ public function login(){
         header("Location: index.php?action=parametre");
         require "view/User/viewParametres.php";
     }
+
 }

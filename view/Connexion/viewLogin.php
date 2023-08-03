@@ -19,8 +19,9 @@ ob_start();
             <div class="button-container">
                 <input type="submit" name="submitLogin" class="submit-button">
             </div>
+            <br>
+            <h2>Cliquez <a href="index.php?action=connexion"><b>ici</b></a> pour vous <a href="index.php?action=connexion">inscrire</a> !</h2>
         </form>
-        
     </div>
 
 <?php

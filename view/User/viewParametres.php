@@ -11,7 +11,7 @@ $compte = $requete->fetchAll();
         <?php
             foreach($compte as $utilisateur){
                 if($utilisateur['role'] == 'utilisateur'){
-                    echo "<div class='couleur-et-utilisateur'><div class='user-color 'style='background-color:".$utilisateur['couleur']."'></div> ". $utilisateur['pseudo']."<div class='operation'><i class='fa-solid fa-pen'></i><i class='fa-solid fa-trash'></i></div></div>";
+                    echo "<div class='couleur-et-utilisateur'><div class='user-color 'style='background-color:".$utilisateur['couleur']."'></div> ". $utilisateur['pseudo']."<div class='operation'><a href='#'><i class='fa-solid fa-pen'></i></a><a href='index.php?action=supprimerUtilisateur'><i class='fa-solid fa-trash'></i></a></div></div>";
                 }
             }
         ?>
