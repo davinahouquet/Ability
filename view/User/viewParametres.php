@@ -10,7 +10,9 @@ $compte = $requete->fetchAll();
     <div class="choix-utilisateur">
         <?php
             foreach($compte as $utilisateur){
-                echo "<div class='couleur-et-utilisateur'><div class='user-color 'style='background-color:".$utilisateur['couleur']."'></div> ". $utilisateur['pseudo']."</div>";
+                if($utilisateur['role'] == 'utilisateur'){
+                    echo "<div class='couleur-et-utilisateur'><div class='user-color 'style='background-color:".$utilisateur['couleur']."'></div> ". $utilisateur['pseudo']."<i class='fa-solid fa-pen'></i><i class='fa-solid fa-trash'> </i></div>";
+                }
             }
         ?>
     </div>

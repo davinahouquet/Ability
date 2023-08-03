@@ -49,7 +49,7 @@ ob_start();
 
             <div class="form-input">
                 <label for="account-name">Adresse Mail</label>
-                <input type="text" placeholder="Groupe vert" name="account-name" value="" required>
+                <input type="text" placeholder="Adresse" name="account-name" required>
             </div>
             <div class="form-input">
                 <label for="password">Mot de passe</label>

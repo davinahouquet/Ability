@@ -116,14 +116,17 @@ public function login(){
         require "view/User/viewChoixUser.php";
     }
 
+    // Aller à la page de connexion de l'admin
     public function loginAdmin(){
         require "view/Connexion/viewAdminConnexion.php";
     }
 
+    // Aller à la page de connexion du SuperAdmin
     public function loginSuperAdmin(){
         require "view/Connexion/viewSuperAdminConnexion.php";
     }
 
+    // Accès aux paramètres
     public function parametre(){
         $pdo = Connect::seConnecter();
         
@@ -135,6 +138,7 @@ public function login(){
         require "view/User/viewParametres.php";
     }
 
+    // Vue après connexion du SuperAdmin
     public function landingPageSuperAdmin(){
         $pdo = Connect::seConnecter();
 
@@ -144,4 +148,8 @@ public function login(){
     
         require ("view/user/viewLandingPageSuperAdmin.php");
     }
+
+    // Fonction qui permet de modifier un nom d'utilisateur (Vue paramètres)
+
+    // Fonction qui permet de supprimer un utilisateur (Vue paramètres)
 }
