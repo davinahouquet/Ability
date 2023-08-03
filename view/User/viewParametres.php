@@ -3,7 +3,7 @@ ob_start();
 $compte = $requete->fetchAll();
 ?>
 
-<div class="paramètres">
+<section class="paramètres">
 
     <h1>Paramètres</h1>
     
@@ -11,16 +11,16 @@ $compte = $requete->fetchAll();
         <?php
             foreach($compte as $utilisateur){
                 if($utilisateur['role'] == 'utilisateur'){
-                    echo "<div class='couleur-et-utilisateur'><div class='user-color 'style='background-color:".$utilisateur['couleur']."'></div> ". $utilisateur['pseudo']."<i class='fa-solid fa-pen'></i><i class='fa-solid fa-trash'> </i></div>";
+                    echo "<div class='couleur-et-utilisateur'><div class='user-color 'style='background-color:".$utilisateur['couleur']."'></div> ". $utilisateur['pseudo']."<div class='operation'><i class='fa-solid fa-pen'></i><i class='fa-solid fa-trash'></i></div></div>";
                 }
             }
         ?>
     </div>
-</div>
+</section>
 
 <?php
 $titre = "Ability";
 $titre_secondaire = "Paramètres";
 $contenu = ob_get_clean();
 require "view/template.php";
-?>
+?> 

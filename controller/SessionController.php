@@ -146,10 +146,36 @@ public function login(){
             SELECT id_jeu, nom_jeu, consigne, image FROM jeu ORDER BY rand()
         ");
     
-        require ("view/user/viewLandingPageSuperAdmin.php");
+        require "view/user/viewLandingPageSuperAdmin.php";
     }
 
     // Fonction qui permet de modifier un nom d'utilisateur (Vue paramètres)
+    public function modifierUtilisateur(){
+        $pdo = Connect::seConnecter();
+        $requeteModifierUtilisateur = $pdo->prepare("
+           
+        ");
+        $requeteModifierUtilisateur->execute([""]);
+        require "view/User/viewParametres.php";
+    }
 
     // Fonction qui permet de supprimer un utilisateur (Vue paramètres)
+    public function supprimerUtilisateur($id){
+        $pdo = Connect::seConnecter();
+        // D'abord supprimer de la table progresser
+        $requeteSupprimerProgresser = $pdo->prepare("
+            DELETE FROM progresser
+            WHERE id_utilisateur = :id
+        ");
+        $requeteSupprimerProgresser->execute(["id"=>$id]);
+
+        $requeteSupprimerUtilisateur = $pdo->prepare("
+            DELETE FROM utilisateur
+            WHERE id_utilisateur = :id
+        ");
+        $requeteSupprimerUtilisateur->execute(["id"=>$id]);
+
+        header("Location: index.php?action=parametre");
+        require "view/User/viewParametres.php";
+    }
 }

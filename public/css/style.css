@@ -291,7 +291,7 @@ footer{
     transition: 0.7s;
 }
 
-/* VUE CONNEXION ADMIN ET SUPERADMIN*/
+/* ---------- VUE CONNEXION ADMIN ET SUPERADMIN ----------*/
 .admin-connexion-container{
     max-width: 100%;
     min-height: 40vh;
@@ -325,15 +325,38 @@ footer{
     color: var(--font-submit-button);
 }
 
-/* VUE PARAMETRES */
+/* --------- VUE PARAMETRES ---------*/
 
+/* La section paramètres */
+.paramètres{
+    margin-left: 500px;
+    margin-right: 500px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* (Foreach utilisateur) Contient tous les utilisateurs */
 .choix-utilisateur{
+    width: fit-content;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     background-color: var(--background-gamespace);
 }
 
+/* La ligne de la couleur et du pseudo de l'utilisateur */
 .couleur-et-utilisateur{
     display: flex;
     flex-direction: row;
+    padding: 10px;
+    align-items: center;
+}
+
+/* Les icones modification et suppression */
+.operation{
+    text-align: right;
+    padding: 10px;
 }

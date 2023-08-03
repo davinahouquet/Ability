@@ -39,6 +39,7 @@ if(isset($_GET["action"])){
         case "deconnexion" : $ctrlSession->deconnexion(); break;
         case "parametre" : $ctrlSession->parametre(); break;
         case "landingPageSuperAdmin" : $ctrlSession->landingPageSuperAdmin(); break;
+        case "supprimerUtilisateur" : $ctrlSession->supprimerUtilisateur($id); break;
 
         // Jeux
         case "jeu" : $ctrlGame->jeu($id); break;
