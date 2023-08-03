@@ -161,6 +161,7 @@ public function login(){
 
     // Fonction qui permet de supprimer un utilisateur (Vue paramètres)
     public function supprimerUtilisateur($id){
+        
         $pdo = Connect::seConnecter();
         // D'abord supprimer de la table progresser
         $requeteSupprimerProgresser = $pdo->prepare("
