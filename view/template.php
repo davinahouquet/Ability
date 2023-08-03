@@ -106,17 +106,16 @@
         <?= $contenu ?>
     </main>
 
+    <footer>
+        
+        <div class="socials">
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram" id="social-item"></i></a>
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook" id="social-item"></i></a>
+            <a href="https://www.linkedin.com/notifications/?filter=all"><i class="fa-brands fa-linkedin" id="social-item"></i></a>
+        </div>
+        
+    </footer>
 </body>
-
-<footer>
-
-    <div class="socials">
-        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram" id="social-item"></i></a>
-        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook" id="social-item"></i></a>
-        <a href="https://www.linkedin.com/notifications/?filter=all"><i class="fa-brands fa-linkedin" id="social-item"></i></a>
-    </div>
-
-</footer>
 
 <script src="js/script.js"></script>
 </html>
