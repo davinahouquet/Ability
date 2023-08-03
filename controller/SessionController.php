@@ -123,4 +123,25 @@ public function login(){
     public function loginSuperAdmin(){
         require "view/Connexion/viewSuperAdminConnexion.php";
     }
+
+    public function parametre(){
+        $pdo = Connect::seConnecter();
+        
+        $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+        
+        $requete = $pdo->prepare("SELECT * FROM utilisateur WHERE email = :email");
+        $requete->execute(["email"=>$email]);
+
+        require "view/User/viewParametres.php";
+    }
+
+    public function landingPageSuperAdmin(){
+        $pdo = Connect::seConnecter();
+
+        $requeteJeu = $pdo->query("
+            SELECT id_jeu, nom_jeu, consigne, image FROM jeu ORDER BY rand()
+        ");
+    
+        require ("view/user/viewLandingPageSuperAdmin.php");
+    }
 }

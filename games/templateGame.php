@@ -14,41 +14,87 @@
 <header>
     
     <nav>
+        <!-- Le logo -->
+        <div class="ability-logo">
+            <a href="http://localhost/Ability/index.php?action=landingPage"><img class="logo" src="http://localhost/Ability/public/img/logo.png"></a>
+        </div>
+            <ul class="navigation">
+                <li><a href="index.php?action=categorie">Catégories</a></li>
+                <div class="dropdown-container">
+                    <li class="dropdown">
+                        <a href="#"><?php
+                            // if connected...
+                            if(isset($_SESSION['pseudo'])){
+                                echo "<p>".$_SESSION['pseudo']."</p>";
+                            } else {
+                                echo "<p><a href='index.php?action=connexion' class='navigation-item'>Connexion</a></p>";
+                            }
+            
+            // var_dump($utilisateur['pseudo']);die;
+                        ?></a>
+                        <ul class="dropdown-content">
+                            <li><a href="index.php?action=loginAdmin">Paramètres</a></li>
+                            <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
+                        </ul>
+                    </li>
+                    <?php 
+                        if(isset($_SESSION['couleur'])){
+                            echo "<div class='user-color 'style='background-color:". $_SESSION['couleur'] .";'></div>";
+                        } else {
+                            echo "<div class='user-color 'style='background-color:'rgb(0,255,255)';'></div>";
+                        }
+                        ?>
+                </div>
+                    
+                    </ul>
+    </nav>
+
+    <!-- <nav>
         <div class="ability-logo">
             <a href="http://localhost/Ability/index.php?action=landingPage"><img class="logo" src="http://localhost/Ability/public/img/logo.png"></a>
         </div>
         <ul class="navigation">
-            <p><a href="index.php?action=categorie" class="navigation-item">Catégories</a></p>
+            <p><a href="index.php?action=deconnexion">Déconnexion</a></p>
+            <p><a href="index.php?action=categorie" class="navigation-item">Catégories</a></p> -->
 
             <!-- CONNEXION - COMPTE - UTILISATEURS - ADMIN -->
             <?php
                 // if connected...
-                if(isset($_SESSION["pseudo"])){
-                    echo $_SESSION["pseudo"];
-                } else {
-                    echo "<p><a href='index.php?action=connexion' class='navigation-item'>Connexion</a></p>";
-                }
+            //     if(isset($_SESSION['pseudo'])){
+            //         echo "<p>".$_SESSION['pseudo']."</p>";
+            //     } else {
+            //         echo "<p><a href='index.php?action=connexion' class='navigation-item'>Connexion</a></p>";
+            //     }
+
+            // if(isset($_SESSION['couleur'])){
+            //     echo "<div class='user-color 'style='background-color:". $_SESSION['couleur'] .";'></div>";
+            // } else {
+            //     echo "<div class='user-color 'style='background-color:'rgb(0,255,255)';'></div>";
+            // }
             ?>
-            <div class="user-color"></div>
             <?php
                 //else if connected...
             ?>
-            <!-- <p class=""><a href="index.php?action=account&id=#">$account-name</a></p> -->
+            <!-- <p class=""><a href="index.php?action=account&id=#">$account-name</a></p>
+                <input type="color" value="..."> -->
 
             <?php
                 //else if username...
             ?>
-            <!-- <p class=""><a href="index.php?action=username&id=#">$username</a></p> -->
+            <!-- <p class=""><a href="index.php?action=username&id=#">$username</a></p>
+                <input type="color" value="..."> -->
 
             <?php
                 //else if Admin...
             ?>
-            <!-- <p class=""><a href="index.php?action=#">Admin</a></p> -->
+            <!-- <p class=""><a href="index.php?action=#">Admin</a></p>
+                <input type="color" value="..."> -->
 
             <?php
                 //else ...
             ?>
-            <!-- <p class=""><a href="index.php?action=#">Super Admin</a></p> -->
+            <!-- <p class=""><a href="index.php?action=#">Super Admin</a></p>
+                <input type="color" value="..."> -->
 
         </ul>
     </nav>

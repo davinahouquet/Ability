@@ -96,7 +96,7 @@ nav {
     position: absolute;
     background-color: #ffffff;
     border-radius: 5px;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
   }
   
@@ -323,4 +323,17 @@ footer{
 
 .admin-connexion-superadmin{
     color: var(--font-submit-button);
+}
+
+/* VUE PARAMETRES */
+
+.choix-utilisateur{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-gamespace);
+}
+
+.couleur-et-utilisateur{
+    display: flex;
+    flex-direction: row;
 }
