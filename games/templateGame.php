@@ -13,7 +13,7 @@
 
 <header>
     
-    <nav>
+<nav>
         <!-- Le logo -->
         <div class="ability-logo">
             <a href="http://localhost/Ability/index.php?action=landingPage"><img class="logo" src="http://localhost/Ability/public/img/logo.png"></a>
@@ -27,12 +27,22 @@
                             if(isset($_SESSION['pseudo'])){
                                 echo "<p>".$_SESSION['pseudo']."</p>";
                             } else {
-                                echo "<p><a href='index.php?action=connexion' class='navigation-item'>Connexion</a></p>";
+                                echo "<p><a href='index.php?action=login' class='navigation-item'>Connexion</a></p>";
                             }
             
             // var_dump($utilisateur['pseudo']);die;
                         ?></a>
                         <ul class="dropdown-content">
+                            <!-- Tous les utilisateurs qui ont le statut d'utilisateur -->
+                            <li>
+                                <?php
+                                
+                                // foreach($compte as $utilisateur){
+                                //     if($utilisateur['role'] == 'utilisateur'){
+                                //         echo "<div class='couleur-et-utilisateur'><div class='user-color-dropdown'style='background-color:".$utilisateur['couleur']."'></div><p class='utilisateur-dropdown'> ". $utilisateur['pseudo']."</p></div>";
+                                //     }
+                                // }
+                                ?></li>
                             <li><a href="index.php?action=loginAdmin">Paramètres</a></li>
                             <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
                         </ul>

@@ -7,6 +7,7 @@ $compte = $requete->fetchAll();
 
     <h1>Paramètres</h1>
     
+    <button class="parametre-button"><a href="index.php?action=ajouterUtilisateur">Ajouter un utilisateur</a></button>
     <div class="choix-utilisateur">
         <?php
             foreach($compte as $utilisateur){

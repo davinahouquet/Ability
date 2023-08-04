@@ -5,85 +5,94 @@ use Model\Connect;
 
 class SessionController {
 
-// Aller à la page de choix de connexion
-public function connexion(){
-    require "view/Connexion/viewConnexion.php";
-}
+    // Affichage des utilisateurs dans le dropdown de la barre de navigation
+    // public function utilisateurs(){
+    //     $pdo = Connect::seConnecter();
+    //     $requeteUtilisateur = $pdo->prepare("SELECT id_utilisateur, pseudo, couleur FROM utilisateur WHERE email = :email");
+    //     $requeteUtilisateur->execute(["email"=>$email]);
+        
+    //     require "view/template.php";
+    // }
 
-// Formulaire d'inscription
-public function register(){
-
-    if(isset($_POST["submitRegister"])){
-        $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $couleur = filter_input(INPUT_POST, "couleur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
-        $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $password1 = filter_input(INPUT_POST, "password1", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        // var_dump($pseudo);
-        // var_dump($couleur);
-        // var_dump($email);
-        // var_dump($password);
-        // var_dump($password1);die;
-        if($pseudo && $email && $password && $password1){
-
-            //Si les mots de passe ne sont pas identitques : échec
-            if($password !== $password1){
-                echo "Failed";
-                exit;
-            } 
-            //S'ils le sont, on hache le mot de passe
-            $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-            
-            //Et on ajoute l'utilisateur dans la base de données
-            $pdo = Connect::seConnecter();
-            $requete=$pdo->prepare("INSERT INTO utilisateur (pseudo, couleur, email, password, role)
-                                VALUES (:pseudo, :couleur, :email, :password, 'admin')");
-            $requete->execute([
-                "pseudo"=>$pseudo,
-                "couleur"=>$couleur,
-                "email"=>$email,
-                "password"=>$passwordHash,
-            ]);
-            // var_dump($passwordHash);die;         
-        }
-        // On redirige vers la page de connexion
-        header("Location: index.php?action=login");
+    // Aller à la page de choix de connexion
+    public function connexion(){
+        require "view/Connexion/viewInscription.php";
     }
-    require "view/Connexion/viewConnexion.php";
-}
 
-// Aller à la page de connexion Login
-public function login(){
+    // Formulaire d'inscription
+    public function register(){
 
-    $pdo = Connect::seConnecter();
-    
-    if(isset($_POST["submitLogin"])){
-        $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
-        $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        if(isset($_POST["submitRegister"])){
+            $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $couleur = filter_input(INPUT_POST, "couleur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+            $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $password1 = filter_input(INPUT_POST, "password1", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            // var_dump($pseudo);
+            // var_dump($couleur);
+            // var_dump($email);
+            // var_dump($password);
+            // var_dump($password1);die;
+            if($pseudo && $email && $password && $password1){
 
-        if($email && $password){
-            $requete = $pdo->prepare("SELECT * FROM utilisateur WHERE email = :email");
-            $requete->execute(["email" => $email]);
-            $utilisateur = $requete->fetch();
+                //Si les mots de passe ne sont pas identitques : échec
+                if($password !== $password1){
+                    echo "Failed";
+                    exit;
+                } 
+                //S'ils le sont, on hache le mot de passe
+                $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+                
+                //Et on ajoute l'utilisateur dans la base de données
+                $pdo = Connect::seConnecter();
+                $requete=$pdo->prepare("INSERT INTO utilisateur (pseudo, couleur, email, password, role)
+                                    VALUES (:pseudo, :couleur, :email, :password, 'admin')");
+                $requete->execute([
+                    "pseudo"=>$pseudo,
+                    "couleur"=>$couleur,
+                    "email"=>$email,
+                    "password"=>$passwordHash,
+                ]);
+                // var_dump($passwordHash);die;         
+            }
+            // On redirige vers la page de connexion
+            header("Location: index.php?action=login");
+        }
+        require "view/Connexion/viewConnexion.php";
+    }
 
-            if($utilisateur && password_verify($password, $utilisateur['password'])){
-                // Connexion réussie
-                session_start();
-                echo "Connexion réussie";
-                    $_SESSION['id_utilisateur'] = $utilisateur['id_utilisateur']; // Stockage de l'id_utilisateur dans la session
-                    $_SESSION['pseudo'] = $utilisateur['pseudo']; // Stockage du nom d'utilisateur dans la session
-                    $_SESSION['couleur'] = $utilisateur['couleur'];
-                header("Location: index.php?action=session");
-                exit;
-            } else {
-                // Identifiants invalides
-                echo "Identifiant ou mot de passe invalide";
+    // Aller à la page de connexion Login
+    public function login(){
+
+        $pdo = Connect::seConnecter();
+        
+        if(isset($_POST["submitLogin"])){
+            $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+            $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+            if($email && $password){
+                $requete = $pdo->prepare("SELECT * FROM utilisateur WHERE email = :email");
+                $requete->execute(["email" => $email]);
+                $utilisateur = $requete->fetch();
+
+                if($utilisateur && password_verify($password, $utilisateur['password'])){
+                    // Connexion réussie
+                    session_start();
+                    echo "Connexion réussie";
+                        $_SESSION['id_utilisateur'] = $utilisateur['id_utilisateur']; // Stockage de l'id_utilisateur dans la session
+                        $_SESSION['pseudo'] = $utilisateur['pseudo']; // Stockage du nom d'utilisateur dans la session
+                        $_SESSION['couleur'] = $utilisateur['couleur'];
+                    header("Location: index.php?action=session");
+                    exit;
+                } else {
+                    // Identifiants invalides
+                    echo "Identifiant ou mot de passe invalide";
+                }
             }
         }
+        // require "view/Connexion/viewConnexion.php";
+        require "view/Connexion/viewLogin.php";
     }
-    // require "view/Connexion/viewConnexion.php";
-    require "view/Connexion/viewLogin.php";
-}
 
     public function session($id){
 
@@ -146,6 +155,31 @@ public function login(){
         ");
     
         require "view/user/viewLandingPageSuperAdmin.php";
+    }
+
+    // Fonction qui permet d'ajouter un utilisateur
+    public function ajouterUtilisateur(){
+
+        if(isset($_POST["submitUser"])){
+
+            $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $couleur = filter_input(INPUT_POST, "couleur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+            if($pseudo && $couleur){
+                
+                $pdo = Connect::seConnecter();
+
+                $requeteAddUser = $pdo->prepare("INSERT INTO utilisateur (id_utilisateur, pseudo, couleur, email, ROLE) VALUES (:id, :pseudo, :couleur, :email, 'utilisateur')");
+                $requeteAddUser->execute([
+                    "id"=>$id,
+                    "pseudo"=>$pseudo,
+                    "couleur"=>$couleur,
+                    "email"=>$_SESSION['email']
+                ]);
+            }
+            header("Location: index.php?action=parametre");
+            require "view/User/viewAddUser.php";
+        }
     }
 
     // Fonction qui permet de modifier un nom d'utilisateur (Vue paramètres)

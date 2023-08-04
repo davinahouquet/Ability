@@ -36,11 +36,12 @@
                             <!-- Tous les utilisateurs qui ont le statut d'utilisateur -->
                             <li>
                                 <?php
-                                foreach($compte as $utilisateur){
-                                    if($utilisateur['role'] == 'utilisateur'){
-                                        echo "<div class='couleur-et-utilisateur'><div class='user-color-dropdown'style='background-color:".$utilisateur['couleur']."'></div><p class='utilisateur-dropdown'> ". $utilisateur['pseudo']."</p></div>";
-                                    }
-                                }
+                                
+                                // foreach($compte as $utilisateur){
+                                //     if($utilisateur['role'] == 'utilisateur'){
+                                //         echo "<div class='couleur-et-utilisateur'><div class='user-color-dropdown'style='background-color:".$utilisateur['couleur']."'></div><p class='utilisateur-dropdown'> ". $utilisateur['pseudo']."</p></div>";
+                                //     }
+                                // }
                                 ?></li>
                             <li><a href="index.php?action=loginAdmin">Paramètres</a></li>
                             <li><a href="index.php?action=deconnexion">Déconnexion</a></li>

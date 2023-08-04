@@ -17,15 +17,22 @@ body{
     background: radial-gradient(circle, rgba(250,255,210,1) 0%, rgba(194,255,248,1) 100%);
 }
 
-/* input{
+main{
+    padding-bottom: 2.5rem;
+}
+
+input{
     text-align: left;
-    padding: 10px;
+    padding: 15px;
     border: none;
     border-radius: 10px;
     background-color: var(--input);
-    box-shadow: 10px 5px 5px rgb(133, 133, 133);
-} */
+    box-shadow: 5px 4px 5px rgb(150, 150, 150);
+}
 
+h1{
+    text-align: center;
+}
 /* Contient le submit bouton */
 .button-container{
     max-width: 100%;
@@ -40,7 +47,7 @@ body{
     font-weight: 700;
     padding: 15px;
     margin-top: 15px;
-    box-shadow: 10px 5px 5px rgb(78, 78, 78);
+    box-shadow: 5px 4px 5px rgb(165, 165, 165);
 }
 /*----- Palette de couleurs */
 :root {
@@ -49,9 +56,10 @@ body{
     --font-submit-button: #FFFFFF;
     --superAdmin-button: #DB5050;
     --solution: #a3a3a3;
-    --background-gamespace: #efdbb5;
+    --background-gamespace: #f3eee9;
     --hover: #636363;
-    --input: #d6d6d6;
+    --input: #ffffff;
+    --button: #cfe3f7;
 }
 
 a{
@@ -62,15 +70,46 @@ a:hover{
     color:rgb(98, 98, 98);
 }
 /*---------- BARRE DE NAVIGATION ----------*/
-
-nav{
+nav {
     max-width: 100%;
+    font-size: 20px;
+    /* padding: 10px; */
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    /* background: linear-gradient(180deg, rgba(110,129,127,1), rgb(251,244,233) 42%); */
-}
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  li {
+    display: inline-block;
+    margin-right: 20px;
+  }
 
+  /* Contient le menu déroulant */
+  .dropdown-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  /* Styles pour le menu déroulant */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content li {
+    display: block;
+  }
 /* Le logo Ability */
 .logo{
     max-width: 200px;
@@ -78,18 +117,12 @@ nav{
 }
 /* Contient tous les éléments de navigation */
 .navigation{
-    font-size: 20px;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: right;
     padding: 10px;
     align-items: center;
-}
-
-.navigation-item{
-    color: var(--dark-font-color);
-    text-decoration: none;
-    padding-right: 30px;
+    justify-content: right;
 }
 
 /* Rond de couleur */
@@ -101,15 +134,27 @@ nav{
     margin-right: 30px;
 }
 
+.user-color-dropdown{
+    min-width: 20px;
+    min-height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.utilisateur-dropdown{
+    font-size: 15px;
+}
 /*---------- FOOTER ----------*/
 
 footer{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-height: 50px;
     position: absolute;
     bottom: 0;
-    left: 0;
     width: 100%;
-    height: 50px;
-    /* background: linear-gradient(180deg,  rgba(201,250,247,1), rgb(114, 145, 141) 100%); */
+    height: 2.5rem;
 }
 
 .socials{

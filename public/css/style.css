@@ -59,6 +59,7 @@ h1{
     --background-gamespace: #f3eee9;
     --hover: #636363;
     --input: #ffffff;
+    --button: #cfe3f7;
 }
 
 a{
@@ -172,6 +173,13 @@ footer{
 }
 /*---------- VUE CONNEXION ----------*/
 
+.connexion-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
 /* Contient les deux formulaires */
 .viewConnexion-container{
     display: flex;
@@ -183,8 +191,8 @@ footer{
 
 /* Formulaire d'inscription */
 .inscription-container-form{
-    max-width: 50%;
-    margin-right: 150px;
+    /* max-width: 50%;
+    margin-right: 150px; */
     text-align: center;
 }
 
@@ -373,4 +381,15 @@ footer{
     text-align: right;
     padding: 10px;
     color: var(--dark-font-color);
+}
+
+/* Bouton pour ajouter un utilisateur */
+.parametre-button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    background: var(--button);
+    box-shadow: 5px 4px 5px rgb(165, 165, 165);
+    margin: 10px;
 }

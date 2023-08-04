@@ -65,7 +65,7 @@ ob_start();
 </section>
 <?php
 $titre = "Ability";
-$titre_secondaire = "Connexion";
+$titre_secondaire = "Inscription";
 $contenu = ob_get_clean();
 require "view/template.php";
 //Le require de fin permet d'injecter le contenu dans le template "squelette" > template.php
