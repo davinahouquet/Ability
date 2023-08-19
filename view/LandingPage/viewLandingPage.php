@@ -18,7 +18,7 @@ $categorie = $requeteCategorie->fetchAll();
         if($jeu["image"] === NULL){
             echo "<img src='public/img/defaut.png' width='200'>";
         } else {
-            echo "<img src=". $jeu["image"] ." width='200'>";
+            echo "<img src='public/img/".$jeu["image"]."' width='200'>";
         }
 
             echo "<p>". $jeu["consigne"] ."</p>";
