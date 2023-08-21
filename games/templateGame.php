@@ -59,53 +59,6 @@
                     </ul>
     </nav>
 
-    <!-- <nav>
-        <div class="ability-logo">
-            <a href="http://localhost/Ability/index.php?action=landingPage"><img class="logo" src="http://localhost/Ability/public/img/logo.png"></a>
-        </div>
-        <ul class="navigation">
-            <p><a href="index.php?action=deconnexion">Déconnexion</a></p>
-            <p><a href="index.php?action=categorie" class="navigation-item">Catégories</a></p> -->
-
-            <!-- CONNEXION - COMPTE - UTILISATEURS - ADMIN -->
-            <?php
-                // if connected...
-            //     if(isset($_SESSION['pseudo'])){
-            //         echo "<p>".$_SESSION['pseudo']."</p>";
-            //     } else {
-            //         echo "<p><a href='index.php?action=connexion' class='navigation-item'>Connexion</a></p>";
-            //     }
-
-            // if(isset($_SESSION['couleur'])){
-            //     echo "<div class='user-color 'style='background-color:". $_SESSION['couleur'] .";'></div>";
-            // } else {
-            //     echo "<div class='user-color 'style='background-color:'rgb(0,255,255)';'></div>";
-            // }
-            ?>
-            <?php
-                //else if connected...
-            ?>
-            <!-- <p class=""><a href="index.php?action=account&id=#">$account-name</a></p>
-                <input type="color" value="..."> -->
-
-            <?php
-                //else if username...
-            ?>
-            <!-- <p class=""><a href="index.php?action=username&id=#">$username</a></p>
-                <input type="color" value="..."> -->
-
-            <?php
-                //else if Admin...
-            ?>
-            <!-- <p class=""><a href="index.php?action=#">Admin</a></p>
-                <input type="color" value="..."> -->
-
-            <?php
-                //else ...
-            ?>
-            <!-- <p class=""><a href="index.php?action=#">Super Admin</a></p>
-                <input type="color" value="..."> -->
-
         </ul>
     </nav>
 </header>
@@ -122,8 +75,13 @@
                 <h2>Niveau <?= $level ?></h2>
 
                 <div class="infos-joueur">
-                    <p>(si pas connecté)<a href="#">Connectez-vous</a> pour sauvegarder votre progression</p>
-                    <p>(si connecté)Niveau : /numéro du niveau/</p>
+                    <?php
+                        if($_SESSION['pseudo']){
+                            echo "<p>Niveau : /numéro du niveau/</p>";
+                        } else {
+                           echo "<p><a href='index.php?action=login'>Connectez-vous</a> pour sauvegarder votre progression</p>";
+                        }
+                    ?>
                 </div>
                 
                 <p class="categories">Categories (à faire)</p>

@@ -95,7 +95,18 @@ class GameController {
         }
         require("view/Jeu/viewAddGame.php");
     }
+
+    public function info(){
+        $pdo = Connect::seConnecter();
+
+        $requete =$pdo->prepare("SELECT * from jeu WHERE id_jeu = :id");
+        $requete->execute(["id" => $id]);
+
+        $jeu = $requete->fetch();
+        require "games/".$jeu['nom_jeu'].".php";
+    }
         
 }
 
 ?>
+

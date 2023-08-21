@@ -9,11 +9,13 @@ ob_start();
     <form enctype='multipart/form-data' action="index.php?action=ajouterUtilisateur" method="post" class="connexion-form">
 
     <br>
-        <label for="pseudo">Prénom de l'utilisateur</label>
-        <input type="text" name="pseudo">
+        <div class="form-input">
+            <label for="pseudo">Prénom de l'utilisateur</label>
+            <input type="text" name="pseudo">
+            <input type="color" name="color" id="color">
 
-        <input type="submit" class="submit-button" value="Ajouter">
-
+            <input name="submitUser" type="submit" class="submit-button" value="Ajouter">
+        </div>
     </form>
     
 </section>
@@ -22,5 +24,5 @@ ob_start();
 $titre = "Ability";
 $titre_secondaire = "Ajout Utilisateur";
 $contenu = ob_get_clean();
-require "../../view/template.php";
+require "view/template.php";
 ?> 

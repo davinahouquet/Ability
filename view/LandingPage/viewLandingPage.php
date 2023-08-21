@@ -11,7 +11,8 @@ $categorie = $requeteCategorie->fetchAll();
 
     ?>
        <div class="gameCard">
-            <a href="index.php?action=jeu&id=<?= $id ?>">
+            <!-- <a href="index.php?action=jeu&id=<?= $id ?>"> -->
+            <a href="games/<?= $jeu['nom_jeu'] ?>.php">
     <?php
         echo "<h2>". $jeu["nom_jeu"] ."</h2>";
 

@@ -7,10 +7,16 @@ class SessionController {
 
     // Affichage des utilisateurs dans le dropdown de la barre de navigation
     // public function utilisateurs(){
+
     //     $pdo = Connect::seConnecter();
+
+    //     $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+
     //     $requeteUtilisateur = $pdo->prepare("SELECT id_utilisateur, pseudo, couleur FROM utilisateur WHERE email = :email");
     //     $requeteUtilisateur->execute(["email"=>$email]);
         
+    //     $compte = $requeteUtilisateur->fetchAll();
+
     //     require "view/template.php";
     // }
 
@@ -136,10 +142,38 @@ class SessionController {
 
     // Accès aux paramètres
     public function parametre(){
+
         $pdo = Connect::seConnecter();
         
-        $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
-        
+        if(isset($_POST["submitAdmin"])){
+            
+            $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+            $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+            if($email && $password){
+                $requete = $pdo->prepare("SELECT * FROM utilisateur WHERE email = :email");
+                $requete->execute(["email" => $email]);
+
+                $utilisateur = $requete->fetch();
+                // Pas besoin de && $utilisateur['role'] == 'admin' car on admet que si la personne connaît l'email + mdp c'est adapté
+                if($utilisateur && password_verify($password, $utilisateur['password'])){
+                    // Connexion réussie
+                    session_start();
+                    echo "Connexion réussie";
+                        $_SESSION['id_utilisateur'] = $utilisateur['id_utilisateur']; // Stockage de l'id_utilisateur dans la session
+                        $_SESSION['pseudo'] = $utilisateur['pseudo']; // Stockage du nom d'utilisateur dans la session
+                        $_SESSION['email'] = $utilisateur['email'];
+                        $_SESSION['couleur'] = $utilisateur['couleur'];
+                    header("Location: index.php?action=parametre");
+                    exit;
+                } else {
+                    // Identifiants invalides
+                    echo "Identifiant ou mot de passe invalide";
+                    header("Location: index.php?action=loginAdmin");
+                }
+            }
+        }
+        // $email = $_SESSION["email"];
         $requete = $pdo->prepare("SELECT * FROM utilisateur WHERE email = :email");
         $requete->execute(["email"=>$email]);
 
@@ -178,8 +212,8 @@ class SessionController {
                 ]);
             }
             header("Location: index.php?action=parametre");
-            require "view/User/viewAddUser.php";
         }
+        require "view/User/viewAddUser.php";
     }
 
     // Fonction qui permet de modifier un nom d'utilisateur (Vue paramètres)
