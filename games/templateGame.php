@@ -14,16 +14,17 @@
 <header>
     
 <nav>
-        <!-- Le logo -->
         <div class="ability-logo">
             <a href="http://localhost/Ability/index.php?action=landingPage"><img class="logo" src="http://localhost/Ability/public/img/logo.png"></a>
         </div>
             <ul class="navigation">
+            <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
                 <li><a href="index.php?action=categorie">Catégories</a></li>
                 <div class="dropdown-container">
                     <li class="dropdown">
-                        <a href="#"><?php
-                            // if connected...
+                        <a href="#">
+                            <?php
+                            
                             if(isset($_SESSION['pseudo'])){
                                 echo "<p>".$_SESSION['pseudo']."</p>";
                             } else {
@@ -31,17 +32,20 @@
                             }
             
             // var_dump($utilisateur['pseudo']);die;
-                        ?></a>
+                        ?>
+                        </a>
                         <ul class="dropdown-content">
-                            <!-- Tous les utilisateurs qui ont le statut d'utilisateur -->
                             <li>
                                 <?php
-                                
-                                // foreach($compte as $utilisateur){
-                                //     if($utilisateur['role'] == 'utilisateur'){
-                                //         echo "<div class='couleur-et-utilisateur'><div class='user-color-dropdown'style='background-color:".$utilisateur['couleur']."'></div><p class='utilisateur-dropdown'> ". $utilisateur['pseudo']."</p></div>";
-                                //     }
-                                // }
+                                // $compte = $requeteUtilisateur->fetchAll();
+                                foreach($compte as $utilisateur){
+                                    if($utilisateur['role'] == 'utilisateur'){
+                                        echo "<div class='couleur-et-utilisateur'><div class='user-color-dropdown'style='background-color:".$utilisateur['couleur']."'></div><p class='utilisateur-dropdown'> ". $utilisateur['pseudo']."</p></div>";
+                                    } else {
+                                        echo "";
+                                    }
+                                }
+
                                 ?></li>
                             <li><a href="index.php?action=loginAdmin">Paramètres</a></li>
                             <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
@@ -76,7 +80,7 @@
 
                 <div class="infos-joueur">
                     <?php
-                        if($_SESSION['pseudo']){
+                        if(isset($_SESSION['pseudo'])){
                             echo "<p>Niveau : /numéro du niveau/</p>";
                         } else {
                            echo "<p><a href='index.php?action=login'>Connectez-vous</a> pour sauvegarder votre progression</p>";

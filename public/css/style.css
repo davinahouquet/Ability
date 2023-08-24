@@ -261,7 +261,7 @@ footer{
     background-color: var(--background-gamespace);
     margin-bottom: 50px;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     box-shadow: 5px 4px 5px rgb(160, 160, 160);
     transition: 0.7s;
 }

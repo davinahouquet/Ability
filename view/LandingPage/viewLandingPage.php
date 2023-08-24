@@ -1,7 +1,7 @@
 <?php
 ob_start();
 $jeux = $requeteJeu->fetchAll();
-$categorie = $requeteCategorie->fetchAll();
+// $categorie = $requeteCategorie->fetchAll();
 ?>
 
 <div class="landingPage">
@@ -11,22 +11,21 @@ $categorie = $requeteCategorie->fetchAll();
 
     ?>
        <div class="gameCard">
-            <!-- <a href="index.php?action=jeu&id=<?= $id ?>"> -->
-            <a href="games/<?= $jeu['nom_jeu'] ?>.php">
+            <a href="index.php?action=acces&id=<?= $jeu['id_jeu'] ?>">
     <?php
         echo "<h2>". $jeu["nom_jeu"] ."</h2>";
 
         if($jeu["image"] === NULL){
             echo "<img src='public/img/defaut.png' width='200'>";
         } else {
-            echo "<img src='public/img/".$jeu["image"]."' width='200'>";
+            echo "<img src='public/img/".$jeu["image"]."'  width='200' height='200'>";
         }
 
             echo "<p>". $jeu["consigne"] ."</p>";
 
-        foreach($categorie as $cat){
-            echo "<p>". $cat["nom_categorie"] ."</p>";
-        }
+        // foreach($categorie as $cat){
+        //     echo "<p>". $cat["nom_categorie"] ."</p>";
+        // }
 
         ?>
             </a>
