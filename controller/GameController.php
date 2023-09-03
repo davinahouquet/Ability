@@ -97,15 +97,15 @@ class GameController {
     require "view/Jeu/viewUpdateGame.php";
     }
 
-    public function info(){
-        $pdo = Connect::seConnecter();
+    // public function info(){
+    //     $pdo = Connect::seConnecter();
 
-        $requete =$pdo->prepare("SELECT * from jeu WHERE id_jeu = :id");
-        $requete->execute(["id" => $id]);
+    //     $requete =$pdo->prepare("SELECT * from jeu WHERE id_jeu = :id");
+    //     $requete->execute(["id" => $id]);
 
-        $jeu = $requete->fetch();
-        require "games/".$jeu['nom_jeu'].".php";
-    }
+    //     $jeu = $requete->fetch();
+    //     require "games/".$jeu['nom_jeu'].".php";
+    // }
 
     public function acces($id){
 
@@ -113,9 +113,8 @@ class GameController {
 
         $requete = $pdo->prepare("SELECT * from jeu WHERE id_jeu = :id");
         $requete->execute(["id" => $id]);
-
-        // $lien = "games/".$jeu['nom_jeu'].".php";
-        header("Location: index.php?action=lien&id=$id");
+        
+        header("Location: index.php?action=acces&id=$id");
         require "view/LandingPage/viewLandingPage.php";
     }
         
@@ -126,7 +125,16 @@ class GameController {
         $requete = $pdo->prepare("SELECT * from jeu WHERE id_jeu = :id");
         $requete->execute(["id" => $id]);
 
-        $lien = "games/".$jeu['nom_jeu'].".php";
+        // $lien = "games/".$jeu['nom_jeu'].".php";
+        
+        $jeu = $requete->fetchAll();
+
+        if(empty($jeu['id_jeu'])){
+            echo "Error";
+        }else{
+            header("Location: games/".$jeu['nom_jeu'].".php");
+            require "games/".$jeu['nom_jeu'].".php";
+        }
     }
 }
 

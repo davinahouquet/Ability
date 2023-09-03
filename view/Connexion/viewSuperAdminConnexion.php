@@ -19,3 +19,4 @@ $titre = "Ability";
 $titre_secondaire = "Admin";
 $contenu = ob_get_clean();
 require "view/template.php";
+// require "../../view/template.php";
