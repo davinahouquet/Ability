@@ -114,8 +114,9 @@ class GameController {
         $requete = $pdo->prepare("SELECT * from jeu WHERE id_jeu = :id");
         $requete->execute(["id" => $id]);
         
-        header("Location: index.php?action=acces&id=$id");
-        require "view/LandingPage/viewLandingPage.php";
+        $nomJeu = $requete->fetch()['nom_jeu'];
+        // header("Location: index.php?action=acces&id=$id");
+        require "games/".$nomJeu.".php";
     }
         
     public function lien($id){

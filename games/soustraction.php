@@ -49,5 +49,5 @@ ob_start();
 $titre = "Ability";
 $titre_secondaire = "Soustraction";
 $game = ob_get_clean();
-require "../games/templateGame.php";
+require "games/templateGame.php";
 ?>

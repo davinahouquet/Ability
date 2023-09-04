@@ -183,5 +183,5 @@ ob_start();
 $titre = "Ability";
 $titre_secondaire = "Alphabet";
 $game = ob_get_clean();
-require "../games/templateGame.php";
+require "games/templateGame.php";
 ?> 
